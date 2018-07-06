@@ -54,6 +54,9 @@
 
        });
 
+
+
+
        function validatePhone(txtPhone) {
            var a = document.getElementById(txtPhone).value;
            var filter =/^[0-9-+]+$/;

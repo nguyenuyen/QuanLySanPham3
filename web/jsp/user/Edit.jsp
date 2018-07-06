@@ -66,7 +66,7 @@
 
                 <div class="form-group">
                     <label>Phone:</label>
-                    <input type="text" class="form-control" name="phone" id="phone" value="${userAccount.phone}"> <span id="spnPhoneStatus"></span>
+                    <input type="text" class="form-control" name="phone" id="phone" value="${userAccount.phone}"> <span id="spnPhoneStatus"></span> //Uyen vang
                 </div>
 
                 <div>
