@@ -122,6 +122,10 @@
            return true;
        }
 
+
+
+
+
         function checkInput() {
 
             var flag = isValid;
