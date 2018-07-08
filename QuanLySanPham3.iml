@@ -20,9 +20,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.31" level="application_server_libraries" />
+    <orderEntry type="library" name="postgresql-8.3-603.jdbc4" level="project" />
     <orderEntry type="library" name="javax.servlet.jsp.jstl-1.2.4" level="project" />
-    <orderEntry type="library" name="javax.servlet.jsp.jstl-api-1.2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="javax.servlet.jsp.jstl-api-1.2.1" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
-    <orderEntry type="library" name="postgresql-9.2-1002.jdbc4" level="project" />
   </component>
 </module>

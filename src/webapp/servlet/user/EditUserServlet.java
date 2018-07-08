@@ -1,7 +1,10 @@
 package webapp.servlet.user;
 
 import dao.UserDao;
+import dao.User_logDao;
 import model.UserAccount;
+import model.User_log;
+import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @WebServlet("/EditUserServlet")
 public class EditUserServlet extends HttpServlet {
@@ -17,14 +22,22 @@ public class EditUserServlet extends HttpServlet {
 
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
-
         int id = (int) request.getSession().getAttribute("userId");
+
+        UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+        Timestamp timestamp;
+        Date date = new Date();
+        timestamp = new Timestamp(date.getTime());
+        User_log user_log = new User_log(loginUser.getEmail(), timestamp, "EditUser");
+
         UserAccount userAccount = new UserAccount(phone, name);
         UserDao userDao = new UserDao();
         int kq = userDao.editUser(id, userAccount);
 
         request.setAttribute("isError",kq ==1 ? "1":"0");
         request.setAttribute("listUser",  userDao.findAllUser());
+
+        User_logDao.AddUser_log(user_log);
 
         RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");
         dispatcher.forward(request,response);

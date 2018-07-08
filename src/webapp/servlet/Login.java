@@ -1,8 +1,12 @@
 package webapp.servlet;
 
 import connection.ConnectDatabase;
+import dao.Product_logDao;
 import dao.UserDao;
+import dao.User_logDao;
+import model.Product_log;
 import model.UserAccount;
+import model.User_log;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -11,10 +15,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Date;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
@@ -24,6 +26,7 @@ public class Login extends HttpServlet {
         String user = request.getParameter("email");
         String pass = request.getParameter("pwd");
         request.setAttribute("email", user);
+        Timestamp currentTime;
 
         UserDao userDao = new UserDao();
 
@@ -32,20 +35,26 @@ public class Login extends HttpServlet {
         if (request.getParameter("ghinho") != null) {
             Cookie c = new Cookie("cookieName", user);
             Cookie cookie = new Cookie("cookiePass", pass);
-            cookie.setMaxAge(500);
-            c.setMaxAge(500);
+            cookie.setMaxAge(1000);
+            c.setMaxAge(1000);
             response.addCookie(c);
             response.addCookie(cookie);
 
         }
+        Date date = new Date();
+        currentTime = new Timestamp(date.getTime());
+        User_log user_log = new User_log(user, currentTime, "login");
+        Product_log product_log = new Product_log(user, currentTime, "login");
         try {
             if (userAccount != null) {
                 AppUtils.storeLoginedUser(request.getSession(), userAccount);
+
                 if ("Admin".equals(userAccount.getRole())) {
+                    User_logDao.AddUser_log(user_log);
                     response.sendRedirect(request.getContextPath() + "/AdminServlet");
                 } else {
                     response.sendRedirect(request.getContextPath() + "/UserServlet");
-
+                    Product_logDao.AddProduct_log(product_log);
                 }
             } else {
 

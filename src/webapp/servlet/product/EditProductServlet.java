@@ -1,9 +1,12 @@
 package webapp.servlet.product;
 
 import dao.ProductDao;
+import dao.Product_logDao;
 import dao.UserDao;
 import model.Product;
+import model.Product_log;
 import model.UserAccount;
+import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @WebServlet("/EditProductServlet")
 public class EditProductServlet extends HttpServlet {
@@ -21,12 +26,20 @@ public class EditProductServlet extends HttpServlet {
         int price = Integer.parseInt(gia);
         String type = request.getParameter("type");
         int id = (int) request.getSession().getAttribute("product_id");
+        UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+        Timestamp timestamp;
+        Date date = new Date();
+        timestamp = new Timestamp(date.getTime());
+        Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "EditProduct");
+
         ProductDao productDao = new ProductDao();
         Product product = new Product(id, name, price, type);
         int kq = productDao.editProduct(product);
 
         request.setAttribute("isError", kq == 1 ? 1 : 0);
         request.setAttribute("listProduct", productDao.findAllProduct());
+
+        Product_logDao.AddProduct_log(product_log);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         dispatcher.forward(request, response);

@@ -1,23 +1,24 @@
 package dao;
 
 import connection.ConnectDatabase;
-import model.User_log;
+import model.Product_log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class User_logDao {
-    public static int AddUser_log(User_log user_log) {
+public class Product_logDao {
+    public  static int AddProduct_log(Product_log product_log)
+    {
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
             if(conn == null) return 0;
-            String sql = "insert into user_log ( username, time, type) values (?, ?, ?)";
+            String sql = "insert into product_log ( username, time, type) values (?, ?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1,user_log.getUser());
-            preparedStatement.setTimestamp(2,user_log.getTime());
-            preparedStatement.setString(3,user_log.getType());
+            preparedStatement.setString(1, product_log.getUser());
+            preparedStatement.setTimestamp(2,product_log.getTime());
+            preparedStatement.setString(3,product_log.getType());
             int result = preparedStatement.executeUpdate();
             if(result > 0)
             {
@@ -34,6 +35,5 @@ public class User_logDao {
         }
         return 0;
     }
-
 
 }
