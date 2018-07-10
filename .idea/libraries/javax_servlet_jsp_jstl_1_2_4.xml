@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="javax.servlet.jsp.jstl-1.2.4">
     <CLASSES>
-      <root url="jar://C:/jstl/javax.servlet.jsp.jstl-1.2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/javax.servlet.jsp.jstl-1.2.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
