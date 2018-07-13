@@ -4,6 +4,8 @@ import dao.ProductDao;
 import dao.Product_logDao;
 import model.Product_log;
 import model.UserAccount;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -18,6 +20,7 @@ import java.util.Date;
 
 @WebServlet("/DeleteProductServlet")
 public class DeleteProductServlet extends HttpServlet {
+    public static final Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
@@ -29,10 +32,12 @@ public class DeleteProductServlet extends HttpServlet {
         int kq = productDao.deleteProduct(product_id);
 
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+
         Timestamp timestamp;
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "DeleteProduct");
+        logger.info(product_log);
 
         request.setAttribute("isErrorDelete", kq == 1 ? 1 : 0);
         request.setAttribute("listProduct", productDao.findAllProduct());

@@ -16,10 +16,10 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 @WebServlet("/AddUserServlet")
 public class AddUserServlet extends HttpServlet {
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
        // response.sendRedirect("/jsp/user/Add.jsp");

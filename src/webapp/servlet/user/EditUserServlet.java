@@ -4,6 +4,8 @@ import dao.UserDao;
 import dao.User_logDao;
 import model.UserAccount;
 import model.User_log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -18,6 +20,7 @@ import java.util.Date;
 
 @WebServlet("/EditUserServlet")
 public class EditUserServlet extends HttpServlet {
+    public static final Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String name = request.getParameter("name");

@@ -5,6 +5,8 @@ import dao.UserDao;
 import dao.User_logDao;
 import model.UserAccount;
 import model.User_log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -19,7 +21,7 @@ import java.util.Date;
 
 @WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
-
+    public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Lay danh sach tat ca nguoi dung va tra ve de hien thi

@@ -7,6 +7,8 @@ import dao.User_logDao;
 import model.Product_log;
 import model.UserAccount;
 import model.User_log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -21,6 +23,7 @@ import java.util.Date;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 
+    Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
         String user = request.getParameter("email");
@@ -32,6 +35,10 @@ public class Login extends HttpServlet {
 
         UserAccount userAccount = userDao.findUserByEmailandPass(user, pass);
 
+        if(userAccount == null)
+        {
+            logger.info("user hoac password khong dung");
+        }
         if (request.getParameter("ghinho") != null) {
             Cookie c = new Cookie("cookieName", user);
             Cookie cookie = new Cookie("cookiePass", pass);
@@ -41,10 +48,12 @@ public class Login extends HttpServlet {
             response.addCookie(cookie);
 
         }
+
         Date date = new Date();
         currentTime = new Timestamp(date.getTime());
         User_log user_log = new User_log(user, currentTime, "login");
         Product_log product_log = new Product_log(user, currentTime, "login");
+
         try {
             if (userAccount != null) {
                 AppUtils.storeLoginedUser(request.getSession(), userAccount);
@@ -64,7 +73,7 @@ public class Login extends HttpServlet {
                 response.sendRedirect("/jsp/login.jsp");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.debug(e.getMessage());
         }
 
     }

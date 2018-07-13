@@ -6,6 +6,8 @@ import model.Product;
 import model.Product_log;
 import model.UserAccount;
 import model.User_log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +22,7 @@ import java.util.Date;
 
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
-
+    public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());

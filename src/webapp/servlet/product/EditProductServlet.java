@@ -6,6 +6,8 @@ import dao.UserDao;
 import model.Product;
 import model.Product_log;
 import model.UserAccount;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -20,6 +22,8 @@ import java.util.Date;
 
 @WebServlet("/EditProductServlet")
 public class EditProductServlet extends HttpServlet {
+    public static final Logger logger = LogManager.getRootLogger();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String gia = request.getParameter("price");
@@ -31,9 +35,10 @@ public class EditProductServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "EditProduct");
-
+        logger.info("product_log" + product_log);
         ProductDao productDao = new ProductDao();
         Product product = new Product(id, name, price, type);
+        logger.info("product:" + product);
         int kq = productDao.editProduct(product);
 
         request.setAttribute("isError", kq == 1 ? 1 : 0);
@@ -51,9 +56,10 @@ public class EditProductServlet extends HttpServlet {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id", product_id);
+        logger.info("id : " + product_id);
         ProductDao productDao = new ProductDao();
         Product product = productDao.findProductById(product_id);
-        request.setAttribute("product",product);
+        request.setAttribute("product", product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Edit.jsp");
         dispatcher.forward(request, response);
     }

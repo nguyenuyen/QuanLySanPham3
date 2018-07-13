@@ -5,6 +5,8 @@ import dao.Product_logDao;
 import model.Product;
 import model.Product_log;
 import model.UserAccount;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -19,7 +21,7 @@ import java.util.Date;
 
 @WebServlet("/AddProductServlet")
 public class AddProductServlet extends HttpServlet {
-
+    public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/product/Add.jsp");
@@ -32,6 +34,7 @@ public class AddProductServlet extends HttpServlet {
         String gia = req.getParameter("price");
         String type = req.getParameter("type");
         int price = Integer.parseInt(gia);
+        logger.debug("name:"+name+" gia : " +gia +"type : "+ type +"gia : "+gia);
 
         UserAccount loginUser = AppUtils.getLoginUser(req.getSession());
         Timestamp timestamp;
@@ -43,6 +46,7 @@ public class AddProductServlet extends HttpServlet {
         UserAccount userAccount = AppUtils.getLoginUser(req.getSession());
         int user_id = productDao.findUser_idByEmail(userAccount.getEmail());
         Product product = new Product(name, price, type, user_id);
+        logger.debug(product);
         int kq = productDao.addProduct(product);
         if (kq == 1) {
             Product_logDao.AddProduct_log(product_log);

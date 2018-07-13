@@ -8,9 +8,9 @@
           <element id="module-output" name="QuanLySanPham3" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="jstl-1.2" />
           <element id="library" level="project" name="postgresql-8.3-603.jdbc4" />
-          <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.4" />
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="log4j-api-2.11.0" />
         </element>
       </element>
     </root>
