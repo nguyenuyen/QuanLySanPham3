@@ -27,7 +27,7 @@ public class ConnectDatabase {
        ConnectDatabase myconnect=new ConnectDatabase();
         Connection conn=getConnecttion();
         if(conn != null) {
-           logger.info("ket noi database thanh cong ");
+           logger.error("ket noi database thanh cong ");
         }
         else {
             logger.error("ket noi database that bai");

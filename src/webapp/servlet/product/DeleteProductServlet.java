@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -29,7 +30,13 @@ public class DeleteProductServlet extends HttpServlet {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         ProductDao productDao = new ProductDao();
-        int kq = productDao.deleteProduct(product_id);
+        int kq = 0;
+        try {
+            kq = productDao.deleteProduct(product_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        logger.error("id san pham : "+product_id);
 
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
 
@@ -37,9 +44,13 @@ public class DeleteProductServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "DeleteProduct");
-        logger.info(product_log);
+
+        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" DeleteProduct");
 
         request.setAttribute("isErrorDelete", kq == 1 ? 1 : 0);
+
+        logger.error("ket qua DeleteProduct: "+kq );
+
         request.setAttribute("listProduct", productDao.findAllProduct());
 
         Product_logDao.AddProduct_log(product_log);

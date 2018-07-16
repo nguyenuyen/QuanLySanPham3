@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebServlet("/EditUserServlet")
 public class EditUserServlet extends HttpServlet {
@@ -33,11 +35,16 @@ public class EditUserServlet extends HttpServlet {
         timestamp = new Timestamp(date.getTime());
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "EditUser");
 
+        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" EditUser");
+
         UserAccount userAccount = new UserAccount(phone, name);
         UserDao userDao = new UserDao();
         int kq = userDao.editUser(id, userAccount);
 
         request.setAttribute("isError",kq ==1 ? "1":"0");
+
+        logger.error("ket qua EditUser(1 la dung): "+kq );
+
         request.setAttribute("listUser",  userDao.findAllUser());
 
         User_logDao.AddUser_log(user_log);

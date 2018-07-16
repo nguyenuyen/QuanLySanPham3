@@ -29,19 +29,29 @@ public class EditProductServlet extends HttpServlet {
         String gia = request.getParameter("price");
         int price = Integer.parseInt(gia);
         String type = request.getParameter("type");
+
+        logger.error("name:"+name+" gia : " +gia +"type : "+ type +"gia : "+gia);
+
         int id = (int) request.getSession().getAttribute("product_id");
+
+        logger.error("id san pham : "+id);
+
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         Timestamp timestamp;
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "EditProduct");
-        logger.info("product_log" + product_log);
+
+        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" EditProduct");
+
         ProductDao productDao = new ProductDao();
         Product product = new Product(id, name, price, type);
-        logger.info("product:" + product);
         int kq = productDao.editProduct(product);
 
         request.setAttribute("isError", kq == 1 ? 1 : 0);
+
+        logger.error("ket qua EditProduct: "+kq );
+
         request.setAttribute("listProduct", productDao.findAllProduct());
 
         Product_logDao.AddProduct_log(product_log);
@@ -56,7 +66,7 @@ public class EditProductServlet extends HttpServlet {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id", product_id);
-        logger.info("id : " + product_id);
+        logger.error("id : " + product_id);
         ProductDao productDao = new ProductDao();
         Product product = productDao.findProductById(product_id);
         request.setAttribute("product", product);

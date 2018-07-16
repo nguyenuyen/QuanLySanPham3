@@ -4,6 +4,7 @@ import dao.UserDao;
 import dao.User_logDao;
 import model.UserAccount;
 import model.User_log;
+import org.apache.logging.log4j.LogManager;
 import utils.AppUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -16,10 +17,13 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 @WebServlet("/AddUserServlet")
 public class AddUserServlet extends HttpServlet {
+    public static final Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
        // response.sendRedirect("/jsp/user/Add.jsp");
@@ -32,10 +36,14 @@ public class AddUserServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "AddUser");
+
+        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" AddUser");
+
         UserAccount userAccount = new UserAccount(email, pass, sdt, name);
         UserDao userDao = new UserDao();
 
         int kq = userDao.addUser(userAccount);
+
         if (  kq == 1)
         {
             User_logDao.AddUser_log(user_log);

@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebServlet("/DeleteUserServlet")
 public class DeleteUserServlet extends HttpServlet {
@@ -32,11 +34,15 @@ public class DeleteUserServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "DeleteUser");
+        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" DeleteUser");
         String idUser = request.getParameter("id");
         int id = Integer.parseInt(idUser);
         UserDao userDao = new UserDao();
         int kq = userDao.deleteUser(id);
         request.setAttribute("isErrorDelete", kq == 1 ? "1" : "0");
+
+        logger.error("ket qua DeleteUser(1 la dung): "+kq );
+
         request.setAttribute("listUser",  userDao.findAllUser());
         User_logDao.AddUser_log(user_log);
         RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");

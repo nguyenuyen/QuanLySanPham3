@@ -28,12 +28,12 @@ public class Product_logDao {
                 return 1;
             }
         } catch (Exception e) {
-            logger.error("khong ket noi duoc database loi Exception"+e.getMessage());
+            logger.error("khong ket noi duoc database loi Exception" + e.getMessage());
         } finally {
             try {
                 conn.close();
             } catch (SQLException e) {
-               logger.warn("khong dong ket noi duoc");
+                logger.error("khong dong ket noi duoc");
             }
         }
         return 0;
