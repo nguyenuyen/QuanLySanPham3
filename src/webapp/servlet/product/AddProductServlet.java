@@ -29,7 +29,7 @@ public class AddProductServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String name = req.getParameter("name");
         String gia = req.getParameter("price");
         String type = req.getParameter("type");
@@ -49,10 +49,11 @@ public class AddProductServlet extends HttpServlet {
         int kq = productDao.addProduct(product);
         logger.error("ket qua AddProduct: "+kq);
         if (kq == 1) {
-            Product_logDao.AddProduct_log(product_log);
-            resp.sendRedirect("/UserServlet");
+           Product_logDao.AddProduct_log(product_log);
+           resp.sendRedirect("/UserServlet");
         } else {
-            resp.sendRedirect("/ErrorServlet");
+            throw new ServletException("HTTP GET Method Is Not Supported");
+
         }
     }
 }

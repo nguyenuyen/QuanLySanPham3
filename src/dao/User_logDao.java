@@ -21,7 +21,7 @@ public class User_logDao {
             preparedStatement.setString(1, user_log.getUser());
             preparedStatement.setTimestamp(2, user_log.getTime());
             preparedStatement.setString(3, user_log.getType());
-            logger.error(sql);
+            logger.error(preparedStatement.toString());
             int result = preparedStatement.executeUpdate();
             if (result > 0) {
                 return 1;

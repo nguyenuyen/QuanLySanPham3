@@ -23,9 +23,10 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "select id from users where users.email='" + email + "'";
+            String sql = "select id from users where users.email= ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
+            ps.setString(1,email);
+            logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 user_id = rs.getInt("id");
@@ -55,10 +56,12 @@ public class ProductDao {
             ps.setInt(2, product.getUser_id());
             ps.setInt(3, product.getPrice());
             ps.setString(4, product.getType());
-            logger.error(sql);
+            logger.error(ps.toString());
             int kq = ps.executeUpdate();
             if (kq > 0) {
                 return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -81,7 +84,7 @@ public class ProductDao {
             if (conn == null) logger.error("loi ket noi database");
             String sql = "select * from product";
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
+            logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"), rs.getInt("user_id")));
@@ -109,10 +112,12 @@ public class ProductDao {
             ps.setInt(2, product.getPrice());
             ps.setString(3, product.getType());
             ps.setInt(4, product.getId());
-            logger.error(sql);
+            logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -133,14 +138,18 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "delete from product where id = " + id;
+            String sql = "delete from product where id = ? " ;
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
+            ps.setInt(1,id);
+            logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;
             }
 
+            else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
+            }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
         } finally {
@@ -160,13 +169,15 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "select* from product where id = " + id;
+            String sql = "select* from product where id = ?" ;
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
+            ps.setInt(1,id);
+
+            logger.error(ps.toString());
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 product = new Product(resultSet.getString("name"), resultSet.getInt("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
-                logger.error(product);
+               // logger.error(product);
             }
 
         } catch (Exception e) {
@@ -180,5 +191,6 @@ public class ProductDao {
         }
         return product;
     }
+
 
 }

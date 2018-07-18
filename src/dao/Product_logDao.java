@@ -22,7 +22,7 @@ public class Product_logDao {
             preparedStatement.setString(1, product_log.getUser());
             preparedStatement.setTimestamp(2, product_log.getTime());
             preparedStatement.setString(3, product_log.getType());
-            logger.info(sql);
+            logger.error(preparedStatement.toString());
             int result = preparedStatement.executeUpdate();
             if (result > 0) {
                 return 1;

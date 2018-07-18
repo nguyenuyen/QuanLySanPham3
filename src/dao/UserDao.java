@@ -4,6 +4,7 @@ import connection.ConnectDatabase;
 import model.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import security.MD5Library;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,10 +31,10 @@ public class UserDao {
             String sql = " select u.email as email,u.password as password ,r.name as role from users as u inner join user_role as ur ON u.id = ur.user_id " +
                     " inner join role r on ur.role_id= r.id where u.email = ? and u.password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
-            ps.setString(1, user);
-            ps.setString(2, pass);
 
+            ps.setString(1, user);
+            ps.setString(2, MD5Library.md5(pass));
+            logger.error(sql);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 userAccount = new UserAccount(rs.getString("email"), rs.getString("password"), rs.getString("role"));
@@ -67,7 +68,7 @@ public class UserDao {
             ps.setString(1, userAccount.getName());
             ps.setString(2, userAccount.getPhone());
             ps.setString(3, userAccount.getEmail());
-            ps.setString(4, userAccount.getPass());
+            ps.setString(4, MD5Library.md5(userAccount.getPass()));
             logger.error(sql);
             ps.executeUpdate();
 
@@ -81,8 +82,9 @@ public class UserDao {
 
             if (result > 0) {
                 return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
             }
-
         } catch (SQLException e) {
             logger.error("loi Exception: " + e.getMessage());
         } finally {
@@ -136,10 +138,12 @@ public class UserDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, userAccount.getName());
             ps.setString(2, userAccount.getPhone());
-            logger.error(sql);
+            logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
             }
 
         } catch (Exception e) {
@@ -164,7 +168,7 @@ public class UserDao {
             if (conn == null) return null;
             String sql = "select * from users where id = " + id;
             PreparedStatement ps = conn.prepareStatement(sql);
-            logger.error(sql);
+            logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 userAccount = new UserAccount(rs.getInt("id"), rs.getString("email"), rs.getString("password"), rs.getString("phone"), rs.getString("name"));
@@ -193,7 +197,7 @@ public class UserDao {
             PreparedStatement ps = conn.prepareStatement(sql1);
             ps.executeUpdate();
             String sql = "delete from users where id = " + id;
-            logger.error(sql);
+            logger.error(ps.toString());
             ps = conn.prepareStatement(sql);
             int result = ps.executeUpdate();
             if (result > 0) {
@@ -208,6 +212,15 @@ public class UserDao {
             } catch (SQLException e) {
                 logger.error("khong dong ket noi duoc");
             }
+        }
+        return 0;
+    }
+
+    public int compareMailBeforeAddUser(List<UserAccount> accountList, String mail) {
+
+        for (int i = 0; i < accountList.size(); i++) {
+            if (mail.equals(accountList.get(i).getEmail()))
+                return 1;
         }
         return 0;
     }

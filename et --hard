@@ -1,0 +1,77 @@
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{0}: checkout: moving from master to a1
+[33m989b878[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{1}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{3}: checkout: moving from master to a1
+[33m989b878[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m989b878[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{5}: reset: moving to 989b878760fcb6560d4a3c4250c1ba96e2d0523b
+[33m9dfb97a[m HEAD@{6}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{7}: reset: moving to f0d6b0450ff14441e7e67029014cb83d35b7890b
+[33m9dfb97a[m HEAD@{8}: reset: moving to 9dfb97a45482bf715ca116adde837b8fcc5f7113
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{9}: checkout: moving from master to a1
+[33m9dfb97a[m HEAD@{10}: reset: moving to 9dfb97a45482bf715ca116adde837b8fcc5f7113
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{11}: checkout: moving from a2 to master
+[33m9dfb97a[m HEAD@{12}: checkout: moving from master to a2
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{13}: reset: moving to HEAD~
+[33m193146b[m HEAD@{14}: reset: moving to HEAD
+[33m193146b[m HEAD@{15}: commit (merge): Merge branch 'master' of https://github.com/nguyenuyen/QuanLySanPham3
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{16}: reset: moving to HEAD
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{17}: reset: moving to f0d6b0450ff14441e7e67029014cb83d35b7890b
+[33mc5b8d4a[m HEAD@{18}: reset: moving to HEAD
+[33mc5b8d4a[m HEAD@{19}: reset: moving to HEAD
+[33mc5b8d4a[m HEAD@{20}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{21}: reset: moving to HEAD
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{22}: checkout: moving from master to a1
+[33mc5b8d4a[m HEAD@{23}: checkout: moving from a2 to master
+[33m9dfb97a[m HEAD@{24}: reset: moving to HEAD
+[33m9dfb97a[m HEAD@{25}: commit: suafile
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{26}: checkout: moving from a1 to a2
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{27}: checkout: moving from a1 to a1
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{28}: checkout: moving from master to a1
+[33mc5b8d4a[m HEAD@{29}: reset: moving to c5b8d4af9ccfdfd3f7049bb45699422ab7faecaf
+[33mf8343ea[m HEAD@{30}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{31}: checkout: moving from master to a1
+[33mf8343ea[m HEAD@{32}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{33}: pull: Fast-forward
+[33mf8343ea[m HEAD@{34}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mc5b8d4a[m HEAD@{35}: reset: moving to c5b8d4af9ccfdfd3f7049bb45699422ab7faecaf
+[33mf8343ea[m HEAD@{36}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{37}: checkout: moving from master to a1
+[33mf8343ea[m HEAD@{38}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33m989b878[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{39}: checkout: moving from a1 to master
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{40}: reset: moving to HEAD
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{41}: checkout: moving from a1 to a1
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{42}: pull --no-rebase --progress origin: Fast-forward
+[33mf8343ea[m HEAD@{43}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mf0d6b04[m[33m ([m[1;36mHEAD -> [m[1;32ma1[m[33m, [m[1;31morigin/a1[m[33m)[m HEAD@{44}: commit: test123
+[33mf8343ea[m HEAD@{45}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mc77faf8[m HEAD@{46}: commit: Test reset 2
+[33mf8343ea[m HEAD@{47}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mb951b0f[m HEAD@{48}: commit: Test reset
+[33mf8343ea[m HEAD@{49}: reset: moving to f8343ead0bdd3b62b76d728476a2b837a061b3a4
+[33mcfde4f3[m HEAD@{50}: reset: moving to cfde4f34acf80e5d147e5997528cb3d56b20837d
+[33mcfde4f3[m HEAD@{51}: reset: moving to cfde4f34acf80e5d147e5997528cb3d56b20837d
+[33mcfde4f3[m HEAD@{52}: commit (amend): test thu
+[33m329f20d[m HEAD@{53}: reset: moving to 329f20d9104e60ccf80e570b212ee89c4de75347
+[33ma45a727[m HEAD@{54}: reset: moving to a45a7275808e88fa43ce3e5df1573c782454e40b
+[33ma45a727[m HEAD@{55}: reset: moving to a45a7275808e88fa43ce3e5df1573c782454e40b
+[33mc422373[m HEAD@{56}: pull: Merge made by the 'recursive' strategy.
+[33ma45a727[m HEAD@{57}: commit (amend): test thu 13
+[33m36f9ad0[m HEAD@{58}: commit (amend): test thu
+[33m329f20d[m HEAD@{59}: commit: test thu
+[33mf8343ea[m HEAD@{60}: commit (merge): Test
+[33mc5b8d4a[m HEAD@{61}: reset: moving to HEAD
+[33mc5b8d4a[m HEAD@{62}: reset: moving to c5b8d4af9ccfdfd3f7049bb45699422ab7faecaf
+[33m7da8566[m HEAD@{63}: commit: test
+[33mc5b8d4a[m HEAD@{64}: reset: moving to HEAD
+[33mc5b8d4a[m HEAD@{65}: reset: moving to c5b8d4af9ccfdfd3f7049bb45699422ab7faecaf
+[33mec71f84[m HEAD@{66}: reset: moving to HEAD
+[33mec71f84[m HEAD@{67}: reset: moving to HEAD
+[33mec71f84[m HEAD@{68}: commit (amend): add 1234568
+[33me974d0e[m HEAD@{69}: commit: asdd
+[33mc5b8d4a[m HEAD@{70}: commit: add 123.jsp
+[33m3c6f318[m HEAD@{71}: commit (amend): add tat ca cac file
+[33m134dd3e[m HEAD@{72}: commit: add
+[33mb24e773[m HEAD@{73}: checkout: moving from a1 to a1
+[33mb24e773[m HEAD@{74}: checkout: moving from master to a1
+[33mb24e773[m HEAD@{75}: commit: add file
+[33mfae74dd[m HEAD@{76}: commit: các file log

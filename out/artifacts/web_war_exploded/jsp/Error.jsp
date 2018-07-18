@@ -12,7 +12,7 @@
 </head>
 <body>
 <form action="/ErrorServlet" method="get">
-    <h1> Error</h1>
+
 </form>
 </body>
 </html>

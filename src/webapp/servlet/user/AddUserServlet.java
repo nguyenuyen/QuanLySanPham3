@@ -14,9 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,9 +27,10 @@ import org.apache.logging.log4j.Logger;
 @WebServlet("/AddUserServlet")
 public class AddUserServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-       // response.sendRedirect("/jsp/user/Add.jsp");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        // response.sendRedirect("/jsp/user/Add.jsp");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String sdt = request.getParameter("phone");
@@ -35,23 +39,25 @@ public class AddUserServlet extends HttpServlet {
         Timestamp timestamp;
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
+        UserDao userDao = new UserDao();
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "AddUser");
+        List<UserAccount> accountList = userDao.findAllUser();
+        int n = userDao.compareMailBeforeAddUser(accountList, email);
+        request.setAttribute("isCompare", "1".equals(String.valueOf(n)) ? "1": "0");
 
-        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" AddUser");
+        logger.error("email:" + loginUser.getEmail() + " time : " + timestamp + " AddUser");
 
         UserAccount userAccount = new UserAccount(email, pass, sdt, name);
-        UserDao userDao = new UserDao();
+
 
         int kq = userDao.addUser(userAccount);
 
-        if (  kq == 1)
-        {
+        if (kq == 1) {
             User_logDao.AddUser_log(user_log);
             response.sendRedirect("/AdminServlet");
-        }
-        else {
+        } else {
             // Chuyen sang trang loi
-          response.sendRedirect("/ErrorServlet");
+            throw new ServletException("HTTP GET Method Is Not Supported");
         }
 
 

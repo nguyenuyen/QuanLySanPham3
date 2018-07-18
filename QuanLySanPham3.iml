@@ -20,8 +20,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.31" level="application_server_libraries" />
+    <orderEntry type="library" name="log4j-api-2.11.0" level="project" />
     <orderEntry type="library" name="postgresql-8.3-603.jdbc4" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
-    <orderEntry type="library" name="log4j-api-2.11.0" level="project" />
   </component>
 </module>

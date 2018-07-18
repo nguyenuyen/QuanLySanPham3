@@ -24,7 +24,8 @@ import java.util.Date;
 public class Login extends HttpServlet {
 
     Logger logger = LogManager.getRootLogger();
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String user = request.getParameter("email");
         String pass = request.getParameter("pwd");
@@ -35,8 +36,7 @@ public class Login extends HttpServlet {
 
         UserAccount userAccount = userDao.findUserByEmailandPass(user, pass);
 
-        if(userAccount == null)
-        {
+        if (userAccount == null) {
             logger.info("user hoac password khong dung");
         }
         if (request.getParameter("ghinho") != null) {
@@ -46,7 +46,6 @@ public class Login extends HttpServlet {
             c.setMaxAge(1000);
             response.addCookie(c);
             response.addCookie(cookie);
-
         }
 
         Date date = new Date();
@@ -65,22 +64,20 @@ public class Login extends HttpServlet {
                     response.sendRedirect(request.getContextPath() + "/UserServlet");
                     Product_logDao.AddProduct_log(product_log);
                 }
+
             } else {
-
-
-
-
                 response.sendRedirect("/jsp/login.jsp");
             }
+
         } catch (IOException e) {
             logger.debug(e.getMessage());
         }
-
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/login.jsp");
         dispatcher.forward(req, resp);
+
     }
 }
