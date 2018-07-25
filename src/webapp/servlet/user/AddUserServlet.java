@@ -41,26 +41,17 @@ public class AddUserServlet extends HttpServlet {
         timestamp = new Timestamp(date.getTime());
         UserDao userDao = new UserDao();
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "AddUser");
-        List<UserAccount> accountList = userDao.findAllUser();
-        int n = userDao.compareMailBeforeAddUser(accountList, email);
-        request.setAttribute("isCompare", "1".equals(String.valueOf(n)) ? "1": "0");
-
         logger.error("email:" + loginUser.getEmail() + " time : " + timestamp + " AddUser");
-
         UserAccount userAccount = new UserAccount(email, pass, sdt, name);
-
-
-        int kq = userDao.addUser(userAccount);
-
-        if (kq == 1) {
+        {
+            int kq = userDao.addUser(userAccount);
+            if (kq != 1) {
+                throw new ServletException("HTTP GET Method Is Not Supported");
+            }
             User_logDao.AddUser_log(user_log);
+            logger.error("email:" + loginUser.getEmail() + " time : " + timestamp + " AddUser");
             response.sendRedirect("/AdminServlet");
-        } else {
-            // Chuyen sang trang loi
-            throw new ServletException("HTTP GET Method Is Not Supported");
         }
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

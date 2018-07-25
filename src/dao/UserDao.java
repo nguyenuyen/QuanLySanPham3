@@ -104,7 +104,7 @@ public class UserDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "select * from users";
+            String sql = "select u.* from users as u inner join user_role as ur ON u.id = ur.user_id and ur.role_id=2";
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -127,9 +127,6 @@ public class UserDao {
 
     //jkdafjdskjf
     public int editUser(int id, UserAccount userAccount) {
-
-
-        ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
@@ -166,8 +163,9 @@ public class UserDao {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
             if (conn == null) return null;
-            String sql = "select * from users where id = " + id;
+            String sql = "select * from users where id = ? " ;
             PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
             logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -193,12 +191,14 @@ public class UserDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql1 = "delete from user_role as ur where ur.user_id = " + id;
+            String sql1 = "delete from user_role as ur where ur.user_id =? " ;
             PreparedStatement ps = conn.prepareStatement(sql1);
+            ps.setInt(1,id);
             ps.executeUpdate();
-            String sql = "delete from users where id = " + id;
+            String sql = "delete from users where id =? " ;
             logger.error(ps.toString());
             ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;
@@ -216,12 +216,35 @@ public class UserDao {
         return 0;
     }
 
-    public int compareMailBeforeAddUser(List<UserAccount> accountList, String mail) {
+    public UserAccount findUser(String email) {
+        UserAccount user = null;
+        Connection conn = null;
 
-        for (int i = 0; i < accountList.size(); i++) {
-            if (mail.equals(accountList.get(i).getEmail()))
-                return 1;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) {
+                logger.error("loi ket noi database");
+            }
+
+            String sql = "select * from users where email= ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            //logger.error(ps.toString());
+            if (rs.next()) {
+                user = new UserAccount();
+            }
+        } catch (Exception var15) {
+            logger.error("loi Exception: " + var15.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException var14) {
+                logger.error("khong dong ket noi duoc");
+            }
+
         }
-        return 0;
+
+        return user;
     }
 }

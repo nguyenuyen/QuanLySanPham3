@@ -34,7 +34,7 @@ public class DeleteUserServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "DeleteUser");
-        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" DeleteUser");
+
         String idUser = request.getParameter("id");
         int id = Integer.parseInt(idUser);
         UserDao userDao = new UserDao();
@@ -42,6 +42,7 @@ public class DeleteUserServlet extends HttpServlet {
         request.setAttribute("isErrorDelete", kq == 1 ? "1" : "0");
 
         logger.error("ket qua DeleteUser(1 la dung): "+kq );
+        if(kq==1)   logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" DeleteUser");
 
         request.setAttribute("listUser",  userDao.findAllUser());
         User_logDao.AddUser_log(user_log);

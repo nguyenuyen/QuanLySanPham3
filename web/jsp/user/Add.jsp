@@ -11,24 +11,34 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
             $('#email').blur(function (e) {
 
 
-                var isCompare = <%= request.getAttribute("ísCompare") %>;
-                if (validateMail('email')) {
-                    $('#spnEmailStatus').html("");
-                }
-                else {
+                if (!validateMail('email')) {
                     $('#spnEmailStatus').html('Invalid');
                     $('#spnEmailStatus').css('color', 'red');
                 }
-                if (isCompare == "1") {
-                     $('#spnEmailStatus').html('Email da ton tai');
-                     $('#spnEmailStatus').css('color', 'red');
-                 }
-                 else{
-                     $('#spnEmailStatus').html("");
-                 }
+                else if(true)
+                {
+                    var email = $('#email').val(); //get the string typed by user
+
+                    $.post('CheckMailServlet', {'email':email}, function(responseText) {
+
+                        if (${isMassage == "1"}) {
+                            $('#spnEmailStatus').html('Email da ton tai');
+                            $('#spnEmailStatus').css('color', 'red');
+                        }
+
+                        else {
+                            $('#spnEmailStatus').html("");
+                        }
+                    });
+                }
+
+                else {
+                    $('#spnEmailStatus').html("");
+                }
             });
 
             var text = document.getElementById('phone');
@@ -55,6 +65,7 @@
             });
 
         });
+
         function validateMail(txtMail) {
             var a = document.getElementById(txtMail).value;
 
@@ -65,6 +76,7 @@
                 return false;
             }
         }
+
         function validatePhone(txtPhone) {
             var a = document.getElementById(txtPhone).value;
             var filter = /^[0-9-+]+$/;
@@ -132,7 +144,7 @@
 
         function checkInput() {
 
-           var flag = true;
+            var flag = true;
             if (!validatePhone('phone')) {
                 alert("So dien thoai khong hop le")
                 flag = false;
@@ -141,9 +153,9 @@
                 alert("mail khong hop le");
                 flag = false;
             }
-            if(${isCompare == '1'}){
+            if (${isMassage == '1'}) {
                 alert("mail đã tồn tại ");
-                flag =false;
+                flag = false;
             }
             if (flag == false) {
                 return false;

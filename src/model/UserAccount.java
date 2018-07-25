@@ -33,6 +33,8 @@ public class UserAccount {
         this.phone = phone;
         this.name = name;
     }
+    public UserAccount() {
+    }
 
 
     public int getId() {
