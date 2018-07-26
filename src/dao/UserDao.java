@@ -195,6 +195,9 @@ public class UserDao {
             PreparedStatement ps = conn.prepareStatement(sql1);
             ps.setInt(1,id);
             ps.executeUpdate();
+            String sql2= "delete from product as ur where ur.user_id =? " ;
+            ps.setInt(1,id);
+            ps.executeUpdate();
             String sql = "delete from users where id =? " ;
             logger.error(ps.toString());
             ps = conn.prepareStatement(sql);
@@ -234,17 +237,17 @@ public class UserDao {
             if (rs.next()) {
                 user = new UserAccount();
             }
-        } catch (Exception var15) {
-            logger.error("loi Exception: " + var15.getMessage());
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
         } finally {
             try {
                 conn.close();
-            } catch (SQLException var14) {
+            } catch (SQLException e) {
                 logger.error("khong dong ket noi duoc");
             }
 
         }
-
         return user;
     }
+
 }

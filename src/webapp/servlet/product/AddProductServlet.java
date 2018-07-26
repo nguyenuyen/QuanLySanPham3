@@ -24,6 +24,8 @@ public class AddProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ProductDao productDao= new ProductDao();
+        req.setAttribute("listType",productDao.findAllTypeProduct());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/product/Add.jsp");
         dispatcher.forward(req, resp);
     }

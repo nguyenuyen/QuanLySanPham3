@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,9 +39,9 @@
                 <div class="form-group">
                     <label>Thể loại :</label>
                     <select class="form-control" id="sel1" name="type">
-                        <option>dien tu</option>
-                        <option>van phong pham</option>
-                        <option>do gia dung</option>
+                        <c:forEach items="${listType}" var="list">
+                            <option value="${list.name}">${list.name}</option>
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="form-group">

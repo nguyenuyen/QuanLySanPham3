@@ -2,6 +2,7 @@ package dao;
 
 import connection.ConnectDatabase;
 import model.Product;
+import model.Type;
 import model.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -191,6 +192,84 @@ public class ProductDao {
         }
         return product;
     }
+    public List<Type> findAllTypeProduct() {
+        ConnectDatabase myConnect = new ConnectDatabase();
+        Connection conn = null;
+        List<Type> types = new ArrayList<>();
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            String sql = "select * from type";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            logger.error(ps.toString());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                types.add(new Type(rs.getInt("id"),rs.getString("name")));
+            }
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return types;
+    }
+    public int addTypeProduct(String type) {
+        Connection conn = null;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            if (conn == null) return 0;
+            String sql = "insert into type (name)  values (?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, type);
 
+            logger.error(ps.toString());
+            int kq = ps.executeUpdate();
+            if (kq > 0) {
+                return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
+            }
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
+    public int deleteTypeProduct(String name) {
+
+        Connection conn = null;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            String sql1 = "delete from type as ur where ur.name =? " ;
+            PreparedStatement ps = conn.prepareStatement(sql1);
+            ps.setString(1,name);
+            logger.error(ps.toString());
+            int result = ps.executeUpdate();
+            if (result > 0) {
+                return 1;
+            }
+
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
 
 }

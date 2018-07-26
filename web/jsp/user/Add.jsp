@@ -189,11 +189,11 @@
                         id="spnPhoneStatus"></span>
                 </div>
                 <div class="form-group">
-                    <label>PassWord</label>
+                    <label>Password</label>
                     <input type="password" class="form-control" name="pass" id="pass" maxlength="16" required="required">
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-default"  >
+                    <input type="submit" class="btn btn-default" value="Them" >
 
                     <button type="reset" class="btn btn-default">Làm mới</button>
                 </div>

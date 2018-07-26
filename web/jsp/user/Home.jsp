@@ -69,7 +69,7 @@
 
         </table>
 
-        <input type="submit" value="Thêm User" class="btn btn-primary"> </input>
+        <input type="submit" value="Them_User" class="btn btn-primary"> </input>
 
     </div>
 </form>

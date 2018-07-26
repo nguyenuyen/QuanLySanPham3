@@ -63,12 +63,12 @@ public class EditProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        ProductDao productDao= new ProductDao();
+        request.setAttribute("listType",productDao.findAllTypeProduct());
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id", product_id);
         logger.error("id : " + product_id);
-        ProductDao productDao = new ProductDao();
         Product product = productDao.findProductById(product_id);
         request.setAttribute("product", product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Edit.jsp");
