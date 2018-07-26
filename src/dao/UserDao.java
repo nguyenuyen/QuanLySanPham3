@@ -223,7 +223,7 @@ public class UserDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) {
-                logger.error("loi ket noi database");
+                logger.info("loi ket noi database");
             }
 
             String sql = "select * from users where email= ?";

@@ -9,11 +9,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-
+       // var isMessage ;
         $(document).ready(function () {
 
             $('#email').blur(function (e) {
-
 
                 if (!validateMail('email')) {
                     $('#spnEmailStatus').html('Invalid');
@@ -21,21 +20,14 @@
                 }
                 else if(true)
                 {
-                    var email = $('#email').val(); //get the string typed by user
-
+                    var email = $('#email').val();
                     $.post('CheckMailServlet', {'email':email}, function(responseText) {
-
-                        if (${isMassage == "1"}) {
-                            $('#spnEmailStatus').html('Email da ton tai');
-                            $('#spnEmailStatus').css('color', 'red');
-                        }
-
-                        else {
-                            $('#spnEmailStatus').html("");
-                        }
+                       // isMessage = responseText;
+                       // console.log(responseText);
+                        $('#spnEmailStatus').html(responseText);
+                        $('#spnEmailStatus').css('color', 'red');
                     });
                 }
-
                 else {
                     $('#spnEmailStatus').html("");
                 }
@@ -66,20 +58,19 @@
 
         });
 
+
         function validateMail(txtMail) {
             var a = document.getElementById(txtMail).value;
-
             if (isEmail(a)) {
                 return true;
             }
-            else {
-                return false;
-            }
+            return false;
+
         }
 
         function validatePhone(txtPhone) {
             var a = document.getElementById(txtPhone).value;
-            var filter = /^[0-9-+]+$/;
+            var filter = /(09|01[2|6|8|9])+([0-9]{8})\b/;
             if (filter.test(a)) {
                 return true;
             }
@@ -145,18 +136,21 @@
         function checkInput() {
 
             var flag = true;
+
             if (!validatePhone('phone')) {
-                alert("So dien thoai khong hop le")
+                alert("So dien thoai khong hop le");
                 flag = false;
             }
             if (!validateMail('email')) {
                 alert("mail khong hop le");
                 flag = false;
             }
-            if (${isMassage == '1'}) {
-                alert("mail đã tồn tại ");
+           /* if(isMessage != null)
+            {
+                isMessage = null;
                 flag = false;
-            }
+                alert(" email da  ton tai")
+            }*/
             if (flag == false) {
                 return false;
             }
@@ -196,10 +190,10 @@
                 </div>
                 <div class="form-group">
                     <label>PassWord</label>
-                    <input type="text" class="form-control" name="pass" id="pass" maxlength="16" required="required">
+                    <input type="password" class="form-control" name="pass" id="pass" maxlength="16" required="required">
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-default" id="" value="Thêm User">
+                    <input type="submit" class="btn btn-default"  >
 
                     <button type="reset" class="btn btn-default">Làm mới</button>
                 </div>

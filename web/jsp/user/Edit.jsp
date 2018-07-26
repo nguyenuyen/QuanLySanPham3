@@ -33,7 +33,7 @@
 
         function validatePhone(txtPhone) {
             var a = document.getElementById(txtPhone).value;
-            var filter =/^[0-9-+]+$/;
+            var filter =/(09|01[2|6|8|9])+([0-9]{8})\b/;
             if (filter.test(a)) {
                 return true;
             }
@@ -71,7 +71,6 @@
 
                 <div>
                     <button type="submit" class="btn btn-default">Sửa</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
                 </div>
             </div>
         </div>

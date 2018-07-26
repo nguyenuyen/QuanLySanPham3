@@ -46,23 +46,11 @@
 
             </c:if>
 
-            <c:if test="${isError == '0'}">
-                <script>
-                    alert("ban sua khong thanh cong ");
-                </script>
-            </c:if>
-
             <c:if test="${isErrorDelete == '1'}">
                 <script>
                     alert("Ban da xoa thanh cong");
                 </script>
 
-            </c:if>
-
-            <c:if test="${isErrorDelete == '0'}">
-                <script>
-                    alert("ban xoa khong thanh cong ");
-                </script>
             </c:if>
 
             <c:forEach items="${listUser}" var="user">
@@ -81,7 +69,7 @@
 
         </table>
 
-        <input type="submit" name="them User" value="Thêm User" class="btn btn-primary"></input>
+        <input type="submit" value="Thêm User" class="btn btn-primary"> </input>
 
     </div>
 </form>

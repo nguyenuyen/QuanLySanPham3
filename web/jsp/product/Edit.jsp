@@ -8,7 +8,6 @@
     <script>
 
         $(document).ready(function() {
-
             var text = document.getElementById('price');
             text.onkeypress = text.onpaste = checkPhone;
             function checkPhone(e) {
@@ -26,7 +25,7 @@
     <title>Sửa Sản Phẩm</title>
 </head>
 <body>
-<form method="post" action="/EditProductServlet">
+<form method="post" action="/EditProductServlet" >
     <div class="container">
          
         <div class="row">
@@ -37,16 +36,19 @@
                     <input type="text" class="form-control" name="name" required value="${product.name}">
                 </div>
                 <div class="form-group">
-                    <label >Thể Loại</label>
-                    <input type="text" class="form-control" name="type" value="${product.type}" required>
+                    <label>Thể loại :</label>
+                    <select class="form-control" id="sel1" name="type">
+                        <option>dien tu</option>
+                        <option>van phong pham</option>
+                        <option>do gia dung</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label >Giá</label>
                     <input type="text" class="form-control" name="price" value="${product.price}" id="price" required>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-default">Sửa</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-default" >Sửa</button>
                 </div>
             </div>
         </div>

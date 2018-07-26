@@ -41,7 +41,7 @@ public class EditUserServlet extends HttpServlet {
         UserDao userDao = new UserDao();
         int kq = userDao.editUser(id, userAccount);
 
-        request.setAttribute("isError",kq ==1 ? "1":"0");
+        request.setAttribute("isError",kq == 1 ? "1":"0");
 
         logger.error("ket qua EditUser(1 la dung): "+kq );
 
@@ -49,9 +49,9 @@ public class EditUserServlet extends HttpServlet {
 
         User_logDao.AddUser_log(user_log);
 
-        RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");
+       RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");
         dispatcher.forward(request,response);
-        // response.sendRedirect("/AdminServlet");
+     //  response.sendRedirect("/AdminServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

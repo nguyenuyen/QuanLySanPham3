@@ -58,6 +58,7 @@ public class EditProductServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         dispatcher.forward(request, response);
+        //response.sendRedirect("/UserServlet");
 
     }
 

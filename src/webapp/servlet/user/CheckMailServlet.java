@@ -15,7 +15,10 @@ public class CheckMailServlet extends HttpServlet {
         String email= request.getParameter("email");
         UserDao userDao=  new UserDao();
         if (userDao.findUser(email) != null) {
-            request.setAttribute("isMassage", "1");
+          //  request.getSession().setAttribute("isMassage", 1);
+            String text =  "email da ton tai";
+            response.setContentType("text/plain");
+            response.getWriter().write(text);
         }
     }
 
