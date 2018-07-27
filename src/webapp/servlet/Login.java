@@ -56,7 +56,6 @@ public class Login extends HttpServlet {
         try {
             if (userAccount != null) {
                 AppUtils.storeLoginedUser(request.getSession(), userAccount);
-
                 if ("Admin".equals(userAccount.getRole())) {
                     User_logDao.AddUser_log(user_log);
                     response.sendRedirect(request.getContextPath() + "/AdminServlet");

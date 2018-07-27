@@ -44,19 +44,19 @@ public class ProductDao {
         return user_id;
     }
 
-    public int addProduct(Product product) {
+    public int addProduct(Product product, String name) {
         ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
             if (conn == null) return 0;
-            String sql = "insert into product (name, user_id, price, type)  values (?,?,?,?)";
+            String sql = "insert into product (name, user_id, price,type_id )  values (?,?,?,(select id from type where type.name = ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2, product.getUser_id());
             ps.setInt(3, product.getPrice());
-            ps.setString(4, product.getType());
+            ps.setString(4, name);
             logger.error(ps.toString());
             int kq = ps.executeUpdate();
             if (kq > 0) {
@@ -83,7 +83,7 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "select * from product";
+            String sql = "select p.name,p.id, p.price ,p.user_id,t.name as type from product as p  inner join type t on p.type_id = t.id";
             PreparedStatement ps = conn.prepareStatement(sql);
             logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();

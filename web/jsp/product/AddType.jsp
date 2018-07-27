@@ -24,9 +24,15 @@
                 <label >Name:</label>
                 <input type="text" class="form-control" id="name" name="name">
             </div>
-                <!--  <input type="submit" class="btn"value="them moi"></input>-->
+            <div class="form-group">
+                <label>Thể loại :</label>
+                <select class="form-control" id="sel1" name="type">
+                    <c:forEach items="${listType}" var="list">
+                        <option value="${list.name}">${list.name}</option>
+                    </c:forEach>
+                    <option value="-----">-----</option>
+                </select>
             </div>
-
             <div>
                 <button type="submit" class="btn btn-default" id="them">Them</button>
             </div>

@@ -59,7 +59,7 @@
                         <option value="-----">-----</option>
                     </select>
                     <br>
-                    <a href="${pageContext.request.contextPath}/AddTypeServlet">Làm mới </a>
+                    <a href="${pageContext.request.contextPath}/AddTypeServlet">Thêm mới </a>
                     <!-- <input type="" value="them moi" class="btn"></input>-->
                 </div>
                 <div class="form-group">

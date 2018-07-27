@@ -48,7 +48,7 @@ public class AddProductServlet extends HttpServlet {
         UserAccount userAccount = AppUtils.getLoginUser(req.getSession());
         int user_id = productDao.findUser_idByEmail(userAccount.getEmail());
         Product product = new Product(name, price, type, user_id);
-        int kq = productDao.addProduct(product);
+        int kq = productDao.addProduct(product,type);
         logger.error("ket qua AddProduct: "+kq);
         if (kq == 1) {
            Product_logDao.AddProduct_log(product_log);
