@@ -27,10 +27,13 @@
 </head>
 <body>
 <form method="post" action="/EditProductServlet" >
-    <div class="container">
-         
+    <div style="float: right">
+        <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+        <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+    </div>
+    <div class="container"> 
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h1>Sửa Sản Phẩm</h1>
                 <div class="form-group">
                     <label>Tên sản phẩm  :</label>

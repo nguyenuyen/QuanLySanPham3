@@ -11,20 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
-@WebServlet("/DeleteTypeServlet")
-public class DeleteTypeServlet extends HttpServlet {
+@WebServlet("/EditTypeServlet")
+public class EditTypeServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      /*  String type = (String) request.getSession().getAttribute("type");
         String name = request.getParameter("name");
-        logger.error("name : " +name);
-        ProductDao productDao = new ProductDao();
-        int kq = productDao.deleteTypeProduct(name);
+        ProductDao productDao= new ProductDao();
+        int kq=productDao.editTypeProduct(name,type);
         if(kq ==1 )
         {
             request.getSession().setAttribute("isMessage",1);
@@ -32,8 +27,16 @@ public class DeleteTypeServlet extends HttpServlet {
         }
         else {
             throw new ServletException("HTTP GET Method Is Not Supported");
-        }
+        }*/
+        String type = request.getParameter("name_type");
+        request.setAttribute("type",type);
+    }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProductDao productDao= new ProductDao();
+        //request.setAttribute("listType",productDao.findAllTypeProduct());
 
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/EditType.jsp");
+        dispatcher.forward(request, response);
     }
 }

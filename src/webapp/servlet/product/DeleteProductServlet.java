@@ -24,11 +24,13 @@ public class DeleteProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
+        request.getSession().setAttribute("product_id",product_id);
         ProductDao productDao = new ProductDao();
         int kq = 0;
         try {
@@ -55,7 +57,8 @@ public class DeleteProductServlet extends HttpServlet {
 
         Product_logDao.AddProduct_log(product_log);
 
-        RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request,response);
+      //  RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/product/Home.jsp");
+      //  dispatcher.forward(request,response);
+        response.sendRedirect("/UserServlet");
     }
 }

@@ -194,14 +194,19 @@ public class UserDao {
             String sql1 = "delete from user_role as ur where ur.user_id =? " ;
             PreparedStatement ps = conn.prepareStatement(sql1);
             ps.setInt(1,id);
-            ps.executeUpdate();
-            String sql2= "delete from product as ur where ur.user_id =? " ;
-            ps.setInt(1,id);
-            ps.executeUpdate();
-            String sql = "delete from users where id =? " ;
             logger.error(ps.toString());
+            ps.executeUpdate();
+
+            String sql2 = "delete from product where user_id =?" ;
+            ps = conn.prepareStatement(sql2);
+            ps.setInt(1,id);
+            logger.error(ps.toString());
+            ps.executeUpdate();
+
+            String sql = "delete from users where id =? " ;
             ps = conn.prepareStatement(sql);
             ps.setInt(1,id);
+            logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;

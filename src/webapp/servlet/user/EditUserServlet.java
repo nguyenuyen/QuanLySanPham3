@@ -49,9 +49,9 @@ public class EditUserServlet extends HttpServlet {
 
         User_logDao.AddUser_log(user_log);
 
-       RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");
-        dispatcher.forward(request,response);
-     //  response.sendRedirect("/AdminServlet");
+       //RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/user/Home.jsp");
+       // dispatcher.forward(request,response);
+       response.sendRedirect("/AdminServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

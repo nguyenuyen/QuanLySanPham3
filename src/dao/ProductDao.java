@@ -26,7 +26,7 @@ public class ProductDao {
             if (conn == null) logger.error("loi ket noi database");
             String sql = "select id from users where users.email= ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1,email);
+            ps.setString(1, email);
             logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -51,7 +51,7 @@ public class ProductDao {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
             if (conn == null) return 0;
-            String sql = "insert into product (name, user_id, price,type_id )  values (?,?,?,(select id from type where type.name = ?)";
+            String sql = "insert into product (name, user_id, price,type_id )  values (?,?,?,(select id from type where type.name = ?))";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2, product.getUser_id());
@@ -77,7 +77,6 @@ public class ProductDao {
     }
 
     public List<Product> findAllProduct() {
-        ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
         List<Product> products = new ArrayList<>();
         try {
@@ -107,7 +106,7 @@ public class ProductDao {
         try {
             conn = new ConnectDatabase().getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "update product set name = ?, price = ?, type = ? where id = ?";
+            String sql = "update product set name = ?, price = ?, type_id = (select id from type where type.name = ?) where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2, product.getPrice());
@@ -139,16 +138,14 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "delete from product where id = ? " ;
+            String sql = "delete from product where id = ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
                 return 1;
-            }
-
-            else {
+            } else {
                 throw new SQLException("khong ket noi duoc database loi Exception");
             }
         } catch (Exception e) {
@@ -170,15 +167,15 @@ public class ProductDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "select* from product where id = ?" ;
+            String sql = "select p.* ,type.name as type  from product as p , type  where p.type_id = type.id and p.id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
 
             logger.error(ps.toString());
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 product = new Product(resultSet.getString("name"), resultSet.getInt("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
-               // logger.error(product);
+                // logger.error(product);
             }
 
         } catch (Exception e) {
@@ -192,6 +189,7 @@ public class ProductDao {
         }
         return product;
     }
+
     public List<Type> findAllTypeProduct() {
         ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
@@ -204,7 +202,7 @@ public class ProductDao {
             logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                types.add(new Type(rs.getInt("id"),rs.getString("name")));
+                types.add(new Type(rs.getInt("id"), rs.getString("name")));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -217,6 +215,7 @@ public class ProductDao {
         }
         return types;
     }
+
     public int addTypeProduct(String type) {
         Connection conn = null;
         try {
@@ -245,15 +244,42 @@ public class ProductDao {
         }
         return 0;
     }
+
     public int deleteTypeProduct(String name) {
 
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql1 = "delete from type as ur where ur.name =? " ;
+            String sql1 = "delete from type as ur where ur.name =? ";
             PreparedStatement ps = conn.prepareStatement(sql1);
-            ps.setString(1,name);
+            ps.setString(1, name);
+            logger.error(ps.toString());
+            int result = ps.executeUpdate();
+            if (result > 0) {
+                return 1;
+            }
+
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
+
+    public int editTypeProduct(String name, String type) {
+        Connection conn = null;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            String sql1 = "update type set name =? where id = (select id from type where type = ?)  ";
+            PreparedStatement ps = conn.prepareStatement(sql1);
+            ps.setString(1, name);
             logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {

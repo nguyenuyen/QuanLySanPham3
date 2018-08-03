@@ -31,15 +31,32 @@
                 return false;
             }
         }
-
+        function confirmDelete(){
+            var doIt=confirm('Do you want to delete the record?');
+            if(doIt){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
     </script>
 
 </head>
 <body>
 <form method="post" action="/AddProductServlet" onsubmit="return checkType()">
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right;padding: 30px;">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí sản phẩm </h1>
+        </div>
+    </div>
     <div class="container"> 
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h1>Thêm Sản Phẩm</h1>
                 <div class="form-group">
                     <label>Tên sản phẩm :</label>
@@ -52,14 +69,16 @@
                             alert("Ban da sua thanh cong");
                         </script>
                     </c:if>
-                    <select class="form-control" id="type" name="type">
+                    <select class="form-control" id="type" name="name_type">
+                        <option value="-----">-----</option>
                         <c:forEach items="${listType}" var="list">
                             <option value="${list.name}">${list.name}</option>
                         </c:forEach>
-                        <option value="-----">-----</option>
                     </select>
                     <br>
-                    <a href="${pageContext.request.contextPath}/AddTypeServlet">Thêm mới </a>
+                    <a href="${pageContext.request.contextPath}/AddTypeServlet">Thêm mới </a>  &nbsp
+                    <a href="${pageContext.request.contextPath}/EditTypeServlet">Sửa</a> &nbsp
+                    <a href="${pageContext.request.contextPath}/DeleteTypeServlet" >Xóa</a>
                     <!-- <input type="" value="them moi" class="btn"></input>-->
                 </div>
                 <div class="form-group">

@@ -56,9 +56,9 @@ public class EditProductServlet extends HttpServlet {
 
         Product_logDao.AddProduct_log(product_log);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request, response);
-        //response.sendRedirect("/UserServlet");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
+        //dispatcher.forward(request, response);
+        response.sendRedirect("/UserServlet");
 
     }
 

@@ -18,32 +18,25 @@
         }
     </script>
 
-    <title>Quản lí sản phẩm</title>
+    <title>Quản lí thể loại</title>
 </head>
 <body>
 <form method="get" action="/AddProductServlet">
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
-        <div style="float: right;padding: 30px;">
+        <div style="float: right; padding: 30px; text-align: right;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
             <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
         </div>
         <div style="float: left">
-            <h1>Quản lí sản phẩm</h1>
+            <h1>Quản lí thể loại</h1>
         </div>
-    </div><br>
+    </div>
     <div class="container">
-        <h2>Danh sách các sản phẩm:</h2>
-
-        <input name="search">
-        <input type="submit" class="btn btn-primary" value="Search"></input>
-
+        <h2>Danh sách các thể loại:</h2>
         <table class="table table-striped">
             <thead>
             <tr>
-
                 <th>name</th>
-                <th>price</th>
-                <th>type</th>
                 <th>sửa</th>
                 <th>xóa</th>
             </tr>
@@ -63,10 +56,7 @@
 
             <c:forEach items="${listProduct}" var="product">
                 <tr>
-
                     <td>${product.name}</td>
-                    <td>${product.price}</td>
-                    <td>${product.type}</td>
                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                             href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}" >Sửa</a></td>
                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
@@ -75,7 +65,7 @@
             </c:forEach>
             </tbody>
         </table>
-        <input type="submit" class="btn btn-primary" value="Add Product"></input> <br> <br>
+        <input type="submit" class="btn btn-primary" value="Add Type"></input> <br> <br>
         <table border="0" cellpadding="0" cellspacing="0">
             <td>
                 <%--For displaying Previous link except for the 1st page --%>

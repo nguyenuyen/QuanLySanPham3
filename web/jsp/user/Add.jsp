@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-       // var isMessage ;
+        // var isMessage ;
         $(document).ready(function () {
 
             $('#email').blur(function (e) {
@@ -18,12 +18,11 @@
                     $('#spnEmailStatus').html('Invalid');
                     $('#spnEmailStatus').css('color', 'red');
                 }
-                else if(true)
-                {
+                else if (true) {
                     var email = $('#email').val();
-                    $.post('CheckMailServlet', {'email':email}, function(responseText) {
-                       // isMessage = responseText;
-                       // console.log(responseText);
+                    $.post('CheckMailServlet', {'email': email}, function (responseText) {
+                        // isMessage = responseText;
+                        // console.log(responseText);
                         $('#spnEmailStatus').html(responseText);
                         $('#spnEmailStatus').css('color', 'red');
                     });
@@ -145,12 +144,12 @@
                 alert("mail khong hop le");
                 flag = false;
             }
-           /* if(isMessage != null)
-            {
-                isMessage = null;
-                flag = false;
-                alert(" email da  ton tai")
-            }*/
+            /* if(isMessage != null)
+             {
+                 isMessage = null;
+                 flag = false;
+                 alert(" email da  ton tai")
+             }*/
             if (flag == false) {
                 return false;
             }
@@ -168,11 +167,18 @@
 <body>
 
 <form method="post" action="/AddUserServlet" onsubmit="return(checkInput());">
-
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí sản phẩm </h1>
+        </div>
+    </div>
     <div class="container">
-         
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h1>Thêm User</h1>
                 <div class="form-group">
                     <label>Name:</label>
@@ -190,10 +196,11 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="pass" id="pass" maxlength="16" required="required">
+                    <input type="password" class="form-control" name="pass" id="pass" maxlength="16"
+                           required="required">
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-default" value="Them" >
+                    <input type="submit" class="btn btn-default" value="Them">
 
                     <button type="reset" class="btn btn-default">Làm mới</button>
                 </div>

@@ -41,15 +41,34 @@
                 return false;
             }
         }
+        function checkInput() {
+            var flag = true;
+
+            if (!validatePhone('phone')) {
+                alert("So dien thoai khong hop le");
+                flag = false;
+            }
+
+            if (flag == false) {
+                return false;
+            }
+
+            else {
+                return true;
+            }
+        }
     </script>
     <title>Thêm User</title>
 </head>
 <body>
-<form method="post" action="/EditUserServlet">
+<form method="post" action="/EditUserServlet" onsubmit="return checkInput()">
+    <div style="float: right">
+        <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+        <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+    </div>
     <div class="container">
-         
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h1>Sửa User</h1>
                 <div class="form-group">
                     <label>Email:</label>

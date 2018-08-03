@@ -1,5 +1,6 @@
 package webapp.servlet.product;
 
+import dao.PagingDao;
 import dao.ProductDao;
 import dao.Product_logDao;
 import model.Product;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
@@ -30,12 +32,28 @@ public class UserServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "ShowProduct");
+        request.setAttribute("loginUser",loginUser);
 
-        ProductDao productDao = new ProductDao();
+      /* ProductDao productDao = new ProductDao();
         request.setAttribute("listProduct", productDao.findAllProduct());
         Product_logDao.AddProduct_log(product_log);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);*/
+        int page =1;
+        int recordsPerpage =5;
+        if(request.getParameter("page") != null)
+        {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+        PagingDao pagingDao = new PagingDao();
+        List<Product> products = pagingDao.viewAllProduct((page - 1)* recordsPerpage , recordsPerpage ,loginUser.getEmail());
+        int noOfRecords = pagingDao.getNoOfRecords();
+        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 /recordsPerpage);
+        request.setAttribute("listProduct", products);
+        request.setAttribute("noOfPages", noOfPages);
+        request.setAttribute("currentPage", page);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
+        dispatcher.forward(request,response);
     }
 
     @Override

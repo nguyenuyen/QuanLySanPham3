@@ -34,9 +34,9 @@ public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String name = req.getParameter("name");
         String gia = req.getParameter("price");
-        String type = req.getParameter("type");
+        String type = req.getParameter("name_type");
         int price = Integer.parseInt(gia);
-        logger.error("name:"+name+" gia : " +gia +"type : "+ type +"gia : "+gia);
+        logger.error("name:"+name+" gia : " +gia +"name_type : "+ type );
 
         UserAccount loginUser = AppUtils.getLoginUser(req.getSession());
         Timestamp timestamp;
