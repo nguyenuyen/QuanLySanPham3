@@ -170,10 +170,10 @@
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
-            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+            <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
-            <h1>Quản lí sản phẩm </h1>
+            <h1>Quản lí user </h1>
         </div>
     </div>
     <div class="container">

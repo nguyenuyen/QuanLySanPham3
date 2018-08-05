@@ -56,10 +56,12 @@ public class EditUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+        UserDao userDao = new UserDao();
+        UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+        request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
         String idUser = request.getParameter("id");
         int id = Integer.parseInt(idUser);
-        UserDao userDao = new UserDao();
+
         //Lay user qua id.
         UserAccount userAccount = userDao.getInformationUserById(id);
 

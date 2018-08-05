@@ -3,16 +3,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+
     <script>
-        function confirmDelete(){
-            var doIt=confirm('Do you want to delete the record?');
-            if(doIt){
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+        function confirmDelete() {
+            var doIt = confirm('Do you want to delete the record?');
+            if (doIt) {
                 return true;
             }
-            else{
+            else {
                 return false;
             }
         }
@@ -21,89 +32,73 @@
     <title>Quản lí sản phẩm</title>
 </head>
 <body>
-<form method="get" action="/AddProductServlet">
+<form method="post" action="/SearchServlet">
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right;padding: 30px;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
-            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+            <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
             <h1>Quản lí sản phẩm</h1>
         </div>
-    </div><br>
+    </div>
+
     <div class="container">
-        <h2>Danh sách các sản phẩm:</h2>
 
-        <input name="search">
-        <input type="submit" class="btn btn-primary" value="Search"></input>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Danh sách các sản phẩm:</h2> <br>
+                <!-- <div style="float: right">
+                     <input name="search">
+                     <input type="submit" class="btn btn-primary" value="Search" ></input> <br>
+                 </div>
+     -->
+                <table id="example" class="table table-striped table-bordered" style="width:100%" cellpadding="0"
+                       cellspacing="0" border="0">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>price</th>
+                        <th>type</th>
+                        <th>sửa</th>
+                        <th>xóa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:if test="${isError == '1'}">
+                        <script>
+                            alert("Ban da sua thanh cong");
+                        </script>
+                    </c:if>
 
-        <table class="table table-striped">
-            <thead>
-            <tr>
+                    <c:if test="${isErrorDelete == '1'}">
+                        <script>
+                            alert("Ban da xoa thanh cong");
+                        </script>
+                    </c:if>
 
-                <th>name</th>
-                <th>price</th>
-                <th>type</th>
-                <th>sửa</th>
-                <th>xóa</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:if test="${isError == '1'}">
-                <script>
-                    alert("Ban da sua thanh cong");
-                </script>
-            </c:if>
-
-            <c:if test="${isErrorDelete == '1'}">
-                <script>
-                    alert("Ban da xoa thanh cong");
-                </script>
-            </c:if>
-
-            <c:forEach items="${listProduct}" var="product">
-                <tr>
-
-                    <td>${product.name}</td>
-                    <td>${product.price}</td>
-                    <td>${product.type}</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                            href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}" >Sửa</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                            href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"onclick="return confirmDelete()">Xóa</a></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <input type="submit" class="btn btn-primary" value="Add Product"></input> <br> <br>
-        <table border="0" cellpadding="0" cellspacing="0">
-            <td>
-                <%--For displaying Previous link except for the 1st page --%>
-                <c:if test="${currentPage != 1}">
-                    <!--  <td> --><a href="/UserServlet?page=${currentPage - 1}">&nbsp;Previous</a><!-- </td> -->
-                </c:if>
-                <%--For displaying Page numbers.
-                The when condition does not display a link for the current page--%>
-                <!-- <table border="1" cellpadding="5" cellspacing="5"> -->
-                <!--  <tr> -->
-                <c:forEach begin="1" end="${noOfPages}" var="i">
-                    <c:choose>
-                        <c:when test="${currentPage eq i}">
-                            <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
-                        </c:when>
-                        <c:otherwise>
-                            <!--  <td> --><a href="/UserServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
-                <!--  </tr> -->
-
-                <%--For displaying Next link --%>
-                <c:if test="${currentPage lt noOfPages}">
-                    <!--  <td> --><a href="/UserServlet?page=${currentPage + 1}">&nbsp;Next</a><!-- </td> -->
-                </c:if>
-            </td>
-        </table>
+                    <c:forEach items="${listProduct}" var="product">
+                        <tr>
+                            <td>${product.id}</td>
+                            <td>${product.name}</td>
+                            <td>${product.price}</td>
+                            <td>${product.type}</td>
+                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
+                                    href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}">Sửa</a>
+                            </td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
+                                    href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
+                                    onclick="return confirmDelete()">Xóa</a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <input type="button" class="btn btn-primary" value="Add Product"
+                       onclick='window.location="${pageContext.request.contextPath}/AddProductServlet"'>
+                </input> <br> <br>
+            </div>
+        </div>
     </div>
 </form>
 </body>

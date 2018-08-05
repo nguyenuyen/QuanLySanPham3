@@ -48,7 +48,7 @@
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right;padding: 30px;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
-            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+            <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
             <h1>Quản lí sản phẩm </h1>
@@ -56,7 +56,7 @@
     </div>
     <div class="container"> 
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-4 col-md-offset-4">
                 <h1>Thêm Sản Phẩm</h1>
                 <div class="form-group">
                     <label>Tên sản phẩm :</label>

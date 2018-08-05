@@ -60,7 +60,9 @@ public class Login extends HttpServlet {
                     User_logDao.AddUser_log(user_log);
                     response.sendRedirect(request.getContextPath() + "/AdminServlet");
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/UserServlet");
+                   // response.sendRedirect(request.getContextPath() + "/UserServlet");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/Home.jsp");
+                    dispatcher.forward(request,response);
                     Product_logDao.AddProduct_log(product_log);
                 }
 

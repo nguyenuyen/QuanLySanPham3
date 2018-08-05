@@ -17,6 +17,10 @@ public class Product {
         this.user_id = user_id;
     }
 
+    public Product() {
+
+    }
+
     public int getUser_id() {
         return user_id;
     }

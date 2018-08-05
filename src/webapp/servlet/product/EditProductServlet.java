@@ -2,6 +2,7 @@ package webapp.servlet.product;
 
 import dao.ProductDao;
 import dao.Product_logDao;
+import dao.TypeDao;
 import dao.UserDao;
 import model.Product;
 import model.Product_log;
@@ -52,7 +53,7 @@ public class EditProductServlet extends HttpServlet {
 
         logger.error("ket qua EditProduct: "+kq );
 
-        request.setAttribute("listProduct", productDao.findAllProduct());
+        request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
         Product_logDao.AddProduct_log(product_log);
 
@@ -63,8 +64,12 @@ public class EditProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        UserDao userDao = new UserDao();
+        UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+        request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
         ProductDao productDao= new ProductDao();
-        request.setAttribute("listType",productDao.findAllTypeProduct());
+        TypeDao typeDao = new TypeDao();
+        request.setAttribute("listType",typeDao.findAllType());
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id", product_id);

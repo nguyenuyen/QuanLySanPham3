@@ -2,6 +2,8 @@ package webapp.servlet.product;
 
 import dao.ProductDao;
 import dao.Product_logDao;
+import dao.TypeDao;
+import dao.UserDao;
 import model.Product;
 import model.Product_log;
 import model.UserAccount;
@@ -24,8 +26,11 @@ public class AddProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductDao productDao= new ProductDao();
-        req.setAttribute("listType",productDao.findAllTypeProduct());
+        UserDao userDao = new UserDao();
+        UserAccount loginUser = AppUtils.getLoginUser(req.getSession());
+        req.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
+        TypeDao typeDao = new TypeDao();
+        req.setAttribute("listType",typeDao.findAllType());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/product/Add.jsp");
         dispatcher.forward(req, resp);
     }

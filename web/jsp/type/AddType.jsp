@@ -16,6 +16,15 @@
 </head>
 <body>
 <form action="/AddTypeServlet" method="post">
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right; padding: 30px; text-align: right;">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.name} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí thể loại</h1>
+        </div>
+    </div>
 <div class="container"> 
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -27,14 +36,14 @@
             <div class="form-group">
                 <label>Thể loại :</label>
                 <select class="form-control" id="sel1" name="type">
+                    <option value="-----">-----</option>
                     <c:forEach items="${listType}" var="list">
                         <option value="${list.name}">${list.name}</option>
                     </c:forEach>
-                    <option value="-----">-----</option>
                 </select>
             </div>
             <div>
-                <button type="submit" class="btn btn-default" id="them">Them</button>
+                <button type="submit" class="btn btn-default" id="them" >Them</button>
             </div>
         </div>
     </div>

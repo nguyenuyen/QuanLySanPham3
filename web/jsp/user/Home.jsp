@@ -5,11 +5,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
     <title>Quản lí user</title>
     <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
         function confirmDelete(){
             var doIt=confirm('Do you want to delete the record?');
             if(doIt){
@@ -26,7 +36,7 @@
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
-            <span style="color:blue">[ ${loginUser.getEmail()} ]</span>
+            <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
             <h1>Quản lí user</h1>
@@ -81,34 +91,7 @@
 
         <input type="submit" value="Them_User" class="btn btn-primary"> </input> <br> <br>
 
-        <table border="0" cellpadding="0" cellspacing="0">
-            <td>
-                <%--For displaying Previous link except for the 1st page --%>
-                <c:if test="${currentPage != 1}">
-                    <!--  <td> --><a href="/AdminServlet?page=${currentPage - 1}">&nbsp;Previous</a><!-- </td> -->
-                </c:if>
-                <%--For displaying Page numbers.
-                The when condition does not display a link for the current page--%>
-                <!-- <table border="1" cellpadding="5" cellspacing="5"> -->
-                <!--  <tr> -->
-                <c:forEach begin="1" end="${noOfPages}" var="i">
-                    <c:choose>
-                        <c:when test="${currentPage eq i}">
-                            <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
-                        </c:when>
-                        <c:otherwise>
-                            <!--  <td> --><a href="/AdminServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
-                <!--  </tr> -->
 
-                <%--For displaying Next link --%>
-                <c:if test="${currentPage lt noOfPages}">
-                    <!--  <td> --><a href="/UserServlet?page=${currentPage + 1}">&nbsp;Next</a><!-- </td> -->
-                </c:if>
-            </td>
-        </table>
 
     </div>
 </form>

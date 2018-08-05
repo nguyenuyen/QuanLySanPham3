@@ -69,8 +69,9 @@ public class UserDao {
             ps.setString(2, userAccount.getPhone());
             ps.setString(3, userAccount.getEmail());
             ps.setString(4, MD5Library.md5(userAccount.getPass()));
-            logger.error(sql);
+
             ps.executeUpdate();
+            logger.error(ps.toString());
 
             //B2:Insert into table User_role
             String sql2 = "insert into user_role (user_id, role_id) values((select id from users where email= ?), 2)";
@@ -163,9 +164,9 @@ public class UserDao {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
             if (conn == null) return null;
-            String sql = "select * from users where id = ? " ;
+            String sql = "select * from users where id = ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             logger.error(ps.toString());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -191,21 +192,21 @@ public class UserDao {
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql1 = "delete from user_role as ur where ur.user_id =? " ;
+            String sql1 = "delete from user_role as ur where ur.user_id =? ";
             PreparedStatement ps = conn.prepareStatement(sql1);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             logger.error(ps.toString());
             ps.executeUpdate();
 
-            String sql2 = "delete from product where user_id =?" ;
+            String sql2 = "delete from product where user_id =?";
             ps = conn.prepareStatement(sql2);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             logger.error(ps.toString());
             ps.executeUpdate();
 
-            String sql = "delete from users where id =? " ;
+            String sql = "delete from users where id =? ";
             ps = conn.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             logger.error(ps.toString());
             int result = ps.executeUpdate();
             if (result > 0) {
@@ -240,7 +241,7 @@ public class UserDao {
             ResultSet rs = ps.executeQuery();
             //logger.error(ps.toString());
             if (rs.next()) {
-                user = new UserAccount();
+                user = new UserAccount(rs.getString("phone"),rs.getString("name"));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -254,5 +255,7 @@ public class UserDao {
         }
         return user;
     }
+
+
 
 }

@@ -31,8 +31,9 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Lay danh sach tat ca nguoi dung va tra ve de hien thi
+        UserDao userDao=new UserDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
-        request.setAttribute("loginUser",loginUser);
+        request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
         Timestamp timestamp;
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());

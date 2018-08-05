@@ -56,8 +56,9 @@ public class AddUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+        UserDao userDao = new UserDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
-        request.setAttribute("loginUser",loginUser);
+        request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/user/Add.jsp");
         dispatcher.forward(request, response);
     }

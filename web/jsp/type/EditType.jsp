@@ -11,28 +11,38 @@
             var text= document.getElementById("type").value;
             var data = document.getElementById("name");
             data.value = text;
-
         }
     </script>
 </head>
 <body>
 <form action="/EditTypeServlet" method="post">
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right; padding: 30px; text-align: right;">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.name} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí thể loại</h1>
+        </div>
+    </div>
     <div class="container"> 
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <h1>Sửa The Loai</h1>
                 <div class="form-group">
                     <label >Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" value="${type}" >
+                    <input type="text" class="form-control" id="name" name="name" value="${type.name}" >
                 </div>
-            <!--    <div class="form-group">
+                <div class="form-group">
                     <label>Thể loại :</label>
-                    <select class="form-control" id="type" name="type" onclick="myfunction()">
-
+                    <select class="form-control" id="type" name="type">
                         <option value="-----">-----</option>
+                        <c:forEach items="${listType}" var="list">
+                            <option value="${list.name}">${list.name}</option>
+                        </c:forEach>
                     </select>
                 </div>
-                -->
+
                 <div>
                     <button type="submit" class="btn btn-default" id="them">Sửa</button>
                 </div>

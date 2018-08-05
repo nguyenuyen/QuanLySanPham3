@@ -53,7 +53,7 @@ public class DeleteProductServlet extends HttpServlet {
 
         logger.error("ket qua DeleteProduct: "+kq );
 
-        request.setAttribute("listProduct", productDao.findAllProduct());
+        request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
         Product_logDao.AddProduct_log(product_log);
 
