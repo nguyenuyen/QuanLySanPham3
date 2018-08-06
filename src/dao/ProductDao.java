@@ -55,7 +55,7 @@ public class ProductDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2, product.getUser_id());
-            ps.setInt(3, product.getPrice());
+            ps.setString(3, product.getPrice());
             ps.setString(4, name);
             logger.error(ps.toString());
             int kq = ps.executeUpdate();
@@ -76,9 +76,15 @@ public class ProductDao {
         return 0;
     }
 
+    public String splitTime(String s)
+    {
+        String[] data = s.split("\\.");
+        return data[0];
+    }
     public List<Product> findAllProduct(String email) {
         Connection conn = null;
         List<Product> products = new ArrayList<>();
+
         int id =0 ;
         try {
             conn = ConnectDatabase.getConnecttion();
@@ -89,13 +95,17 @@ public class ProductDao {
             if(rs.next()){
                 id = rs.getInt(1);
             }
-            String sql = "select p.name,p.id, p.price ,p.user_id,t.name as type from product as p  inner join type t on p.type_id = t.id where p.user_id =? ";
+            String sql = "select p.name,p.id, p.price ,p.user_id,t.name as type,p.create_at from product as p  inner join type t on p.type_id = t.id where p.user_id =? ";
              ps = conn.prepareStatement(sql);
              ps.setInt(1,id);
             logger.error(ps.toString());
              rs = ps.executeQuery();
+             String time;
             while (rs.next()) {
-                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type")));
+                String s= rs.getString("create_at");
+                logger.error("create_at : " + s);
+                time = splitTime(s);
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"),time));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -117,7 +127,7 @@ public class ProductDao {
             String sql = "update product set name = ?, price = ?, type_id = (select id from type where type.name = ?) where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
-            ps.setInt(2, product.getPrice());
+            ps.setString(2,product.getPrice());
             ps.setString(3, product.getType());
             ps.setInt(4, product.getId());
             logger.error(ps.toString());
@@ -182,7 +192,7 @@ public class ProductDao {
             logger.error(ps.toString());
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
-                product = new Product(resultSet.getString("name"), resultSet.getInt("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
+                product = new Product(resultSet.getString("name"), resultSet.getString("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
                 // logger.error(product);
             }
 
@@ -197,6 +207,7 @@ public class ProductDao {
         }
         return product;
     }
+
 
 
 }

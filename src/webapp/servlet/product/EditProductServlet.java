@@ -27,11 +27,10 @@ public class EditProductServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        String gia = request.getParameter("price");
-        int price = Integer.parseInt(gia);
+        String price = request.getParameter("price");
         String type = request.getParameter("type");
 
-        logger.error("name:"+name+" gia : " +gia +"type : "+ type +"gia : "+gia);
+        logger.error("name:"+name+" gia : " +price +"type : "+ type +"gia : "+price);
 
         int id = (int) request.getSession().getAttribute("product_id");
 

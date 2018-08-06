@@ -21,19 +21,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
+
 
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Product product= new Product();
+
         UserDao userDao = new UserDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         Timestamp timestamp;
@@ -44,6 +43,7 @@ public class UserServlet extends HttpServlet {
 
         ProductDao productDao = new ProductDao();
         request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
+
 
        /* JSONArray jsonArray = (JSONArray)JSONSerializer.toJSON(productDao.findAllProduct(loginUser.getEmail()));
         String json = "{'page':1,'total':'2','records':'1','rows':"+jsonArray+"}";

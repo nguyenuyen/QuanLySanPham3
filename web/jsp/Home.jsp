@@ -18,6 +18,15 @@
 </head>
 <body>
 <form>
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right ; padding: 30px ">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.name} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí user</h1>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4" >

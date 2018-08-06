@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
         if (userAccount == null) {
             logger.info("user hoac password khong dung");
         }
-        if (request.getParameter("ghinho") != null) {
+       if (request.getParameter("ghinho") != null) {
             Cookie c = new Cookie("cookieName", user);
             Cookie cookie = new Cookie("cookiePass", pass);
             cookie.setMaxAge(1000);
@@ -60,9 +60,9 @@ public class Login extends HttpServlet {
                     User_logDao.AddUser_log(user_log);
                     response.sendRedirect(request.getContextPath() + "/AdminServlet");
                 } else {
-                   // response.sendRedirect(request.getContextPath() + "/UserServlet");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/Home.jsp");
-                    dispatcher.forward(request,response);
+                    response.sendRedirect(request.getContextPath() + "/HomeServlet");
+                   // RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/Home.jsp");
+                   // dispatcher.forward(request,response);
                     Product_logDao.AddProduct_log(product_log);
                 }
 

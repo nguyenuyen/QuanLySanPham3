@@ -76,9 +76,7 @@
                         </c:forEach>
                     </select>
                     <br>
-                    <a href="${pageContext.request.contextPath}/AddTypeServlet">Thêm mới </a>  &nbsp
-                    <a href="${pageContext.request.contextPath}/EditTypeServlet">Sửa</a> &nbsp
-                    <a href="${pageContext.request.contextPath}/DeleteTypeServlet" >Xóa</a>
+
                     <!-- <input type="" value="them moi" class="btn"></input>-->
                 </div>
                 <div class="form-group">

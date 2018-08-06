@@ -45,16 +45,16 @@
     <div class="container">
         <h2>Danh sách các user:</h2>
 
-        <table class="table table-striped">
+        <table id ="example" class="table table-striped">
             <thead>
 
             <tr>
-
+                <th>id</th>
                 <th>name</th>
                 <th>sdt</th>
                 <th>email</th>
-                <th>sua</th>
-                <th>xoa</th>
+                <th>edit</th>
+                <th>delete</th>
             </tr>
             </thead>
             <tbody>
@@ -75,6 +75,7 @@
 
             <c:forEach items="${listUser}" var="user">
                 <tr>
+                    <td>${user.id}</td>
                     <td>${user.name}</td>
                     <td>${user.phone}</td>
                     <td>${user.email} </td>

@@ -83,6 +83,7 @@
         </table>
         <input type="button" class="btn btn-primary" value="Add Type"
                onclick='window.location="${pageContext.request.contextPath}/AddTypeServlet"'> </input> <br> <br>
+        <a href="${pageContext.request.contextPath}/HomeServlet">Quản lí sản phẩm </a> <br><br>
     </div>
 </form>
 </body>
