@@ -49,6 +49,25 @@
                 }
             });
 
+            $('#deleteAll').on('click', function(e) {
+                var product = [];
+                $(".checkSingle:checked").each(function() {
+                    product.push($(this).data('value'));
+                });
+                if(product.length <=0) { alert("Please select records."); } else { WRN_PROFILE_DELETE = "Are you sure you want to delete "+(employee.length>1?"these":"this")+" row?";
+                    var checked = confirm(WRN_PROFILE_DELETE);
+                    if(checked == true) {
+                        var selected_values = product.join(",");
+                        $.ajax({
+                            type: "POST",
+                            url: "${pageContext.request.contextPath}/DeleteAllProductServlet",
+                            cache:false,
+                            data: 'value='+selected_values,
+                            success: function(response) {
+// remove deleted employee rows
+                                var value = response.split(",");
+                                for (var i=0; i < value.length; i++ ) { $("#"+value[i]).remove(); } } }); } } });
+
         });
 
 
@@ -88,6 +107,8 @@
                     $("#checkedAll").prop("checked", false);
                 }
             });
+
+
 
         }
 
@@ -176,7 +197,7 @@
                 <input type="button" class="btn btn-primary" value="Add Product"
                        onclick='window.location="${pageContext.request.contextPath}/AddProductServlet"'>
                 </input>  &nbsp;  &nbsp;
-                <input type="button" class="btn btn-primary" value="Delete All"
+                <input type="button" id = "deleteAll" class="btn btn-primary" value="Delete All"
                        onclick='window.location="${pageContext.request.contextPath}/Servlet"'>
                 </input> <br><br>
 
