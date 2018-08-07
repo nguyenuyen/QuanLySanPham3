@@ -27,17 +27,7 @@ public class CreateWriteBook {
         CellStyle cellStyle = createStyleForHeader(sheet);
         Row row = sheet.createRow(rowIndex);
 
-        Cell cell =  row.createCell(COLUMN_INDEX_ID);
-        cell.setCellStyle(cellStyle);
-        cell.setCellValue("Id");
 
-        cell = row.createCell(COLUMN_INDEX_NAME);
-        cell.setCellStyle(cellStyle);
-        cell.setCellValue("Name");
-
-        cell = row.createCell(COLUMN_INDEX_PRICE);
-        cell.setCellStyle(cellStyle);
-        cell.setCellValue("Price");
 
 
 

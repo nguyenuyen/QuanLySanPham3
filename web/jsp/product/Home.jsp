@@ -13,67 +13,75 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>-->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>-->
 
     <script>
 
         $(document).ready(function () {
             $('#example').DataTable();
 
-          /*  $("#checkAll").click(function () {
-                $('input:checkbox').not(this).prop('checked', this.checked);
-            });
-*/
-            $("#checkedAll").on('click',function(){
-                if($(this).is(':checked',true)) {
+            /*  $("#checkAll").click(function () {
+                  $('input:checkbox').not(this).prop('checked', this.checked);
+              });
+  */
+            $("#checkedAll").on('click', function () {
+                if ($(this).is(':checked', true)) {
                     $(".checkSingle").prop('checked', true);
                 }
                 else {
                     $(".checkSingle").prop('checked', false);
                 }
-
+                $("#select_count").html($("input.checkSingle:checked").length + " Selected");
+            });
+// set particular checked checkbox count
+            $(".checkSingle").on('click', function (e) {
+                $("#select_count").html($("input.checkSingle:checked").length + " Selected");
             });
 
             $(".checkSingle").click(function () {
-                if ($(this).is(":checked")){
+                if ($(this).is(":checked")) {
                     var isAllChecked = 0;
-                    $(".checkSingle").each(function(){
-                        if(!this.checked)
+                    $(".checkSingle").each(function () {
+                        if (!this.checked)
                             isAllChecked = 1;
                     });
-                    if(isAllChecked == 0){ $("#checkedAll").prop("checked", true); }
-                }else {
+                    if (isAllChecked == 0) {
+                        $("#checkedAll").prop("checked", true);
+                    }
+                } else {
                     $("#checkedAll").prop("checked", false);
                 }
             });
 
-            $("#").click( function(e) {
+            $("#deleteAll").click(function (e) {
                 var product = [];
-                $(".checkSingle:checked").each(function() {
+                $(".checkSingle:checked").each(function () {
                     product.push($(this).data('value'));
                 });
-                if(product.length <=0) { alert("Please select records."); } else { WRN_PROFILE_DELETE = "Are you sure you want to delete "+(product.length>1?"these":"this")+" row?";
+                if (product.length <= 0) {
+                    alert("Please select records.");
+                } else {
+                    WRN_PROFILE_DELETE = "Are you sure you want to delete " + (product.length > 1 ? "these" : "this") + " row?";
                     var checked = confirm(WRN_PROFILE_DELETE);
-                    if(checked == true) {
+                    if (checked == true) {
                         var selected_values = product.join(",");
                         $.ajax({
                             type: "post",
                             url: "${pageContext.request.contextPath}/DeleteAllProductServlet",
-                            cache:false,
-                            data: 'product_id='+selected_values,
-                            success: function(response) {
+                            cache: false,
+                            data: 'product_id=' + selected_values,
+                            success: function (response) {
 // remove deleted employee rows
                                 var product_ids = response.split(",");
-                                for (var i=0; i < product_ids.length; i++ ) {
-                                    $("#"+product_ids[i]).remove();
+                                for (var i = 0; i < product_ids.length; i++) {
+                                    $("#" + product_ids[i]).remove();
                                 }
+                              //  window.location.reload(true);
                             }
                         });
                     }
                 }
             });
-
-
 
         });
 
@@ -120,8 +128,8 @@
                        cellspacing="0" border="0">
                     <thead>
                     <tr>
-                        <th> <label><input type="checkbox" id = "checkedAll" name = "checkedAll"  value="" > </label></th>
-                        <th>no</th>
+                        <th><label><input type="checkbox" id="checkedAll" name="checkedAll" value=""> </label></th>
+
                         <th>name</th>
                         <th>price</th>
                         <th>type</th>
@@ -144,26 +152,34 @@
                     </c:if>
                     <c:forEach items="${listProduct}" var="product">
                         <tr id="${product.id}">
-                            <td><label><input type="checkbox" id="check" name ="check"class="checkSingle" value ="${product.id}" > </label></td>
-                            <td></td>
+                            <td><label><input type="checkbox"  class="checkSingle" data-value="${product.id}"> </label></td>
                             <td>${product.name}</td>
-                            <td> <fmt:formatNumber type="number"  pattern="###,###" value="${product.price}"/> VNĐ</td>
+                            <td><fmt:formatNumber type="number" pattern="###,###" value="${product.price}"/> VNĐ</td>
                             <td>${product.type}</td>
                             <td> ${product.create_at}</td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                    href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}"> edit</a>&nbsp;  &nbsp;
-                           <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
-                                    onclick="return confirmDelete()">delete</a>  </td>
+                                    href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}">
+                                edit</a>&nbsp; &nbsp;
+                                <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
+                                   onclick="return confirmDelete()">delete</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
-                </table> <br>
+                </table>
+                <br>
                 <input type="button" class="btn btn-primary" value="Add Product"
                        onclick='window.location="${pageContext.request.contextPath}/AddProductServlet"'>
-                </input>  &nbsp;  &nbsp;
+                </input> &nbsp; &nbsp;
 
-                <input type="submit" id = "deleteAll" class="btn btn-primary" value="Delete All"  onclick="return confirmDelete()" >
-                </input> <br><br>
+                <!-- <input type="button" id = "deleteAll" class="btn btn-primary" value="Delete All"  onclick="return confirmDelete()" >
+                 </input> <br><br> -->
+
+                <div class="row">
+                    <div class="col-md-2 well">
+                        <span class="rows_selected" id="select_count">0 Selected</span>
+                        <input type="button" id="deleteAll" class="btn btn-primary" value="Delete All"></input>
+                    </div>
+                </div>
 
                 <a href="${pageContext.request.contextPath}/HomeServlet">Quản lí sản phẩm </a> <br><br>
             </div>

@@ -208,12 +208,12 @@ public class ProductDao {
         return product;
     }
 
-    public int deleteAllProduct(String[] arr)
+    public String deleteAllProduct(String value)
     {
         Connection conn = null;
         Product product = null;
-      /*  String id_checked = value.trim();
-        String[] arr = id_checked.split(",");*/
+        String id_checked = value.trim();
+        String[] arr = id_checked.split(",");
         int resultSet = 0 ;
         try {
 
@@ -230,7 +230,7 @@ public class ProductDao {
 
             if (resultSet >0) {
                 // logger.error(product);
-                return 1;
+                return id_checked;
             }
 
         } catch (Exception e) {
@@ -242,7 +242,7 @@ public class ProductDao {
                 logger.error("khong dong ket noi duoc");
             }
         }
-        return 0;
+        return null;
     }
 
 }
