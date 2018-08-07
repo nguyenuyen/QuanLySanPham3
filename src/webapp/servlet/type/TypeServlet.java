@@ -18,7 +18,7 @@ import java.util.List;
 
 @WebServlet("/TypeServlet")
 public class TypeServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 

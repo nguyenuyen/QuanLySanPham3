@@ -150,7 +150,7 @@ public class ProductDao {
 
     }
 
-    public int deleteProduct(int id) throws SQLException {
+    public int deleteProduct(int id) {
         ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
         try {
@@ -179,7 +179,7 @@ public class ProductDao {
     }
 
     public Product findProductById(int id) {
-        ConnectDatabase myConnect = new ConnectDatabase();
+
         Connection conn = null;
         Product product = null;
         try {
@@ -208,6 +208,41 @@ public class ProductDao {
         return product;
     }
 
+    public int deleteAllProduct(String[] arr)
+    {
+        Connection conn = null;
+        Product product = null;
+      /*  String id_checked = value.trim();
+        String[] arr = id_checked.split(",");*/
+        int resultSet = 0 ;
+        try {
 
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            for(int i= 0 ; i<arr.length ; i++)
+            {
+                String sql = "DELETE FROM product WHERE id = ?";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1,Integer.parseInt(arr[i]));
+                logger.error(ps.toString());
+                resultSet = ps.executeUpdate();
+            }
+
+            if (resultSet >0) {
+                // logger.error(product);
+                return 1;
+            }
+
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
 
 }

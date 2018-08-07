@@ -23,7 +23,7 @@ import java.util.Date;
 @WebServlet("/DeleteTypeServlet")
 public class DeleteTypeServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 

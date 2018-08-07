@@ -27,17 +27,13 @@ public class DeleteProductServlet extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id",product_id);
         ProductDao productDao = new ProductDao();
         int kq = 0;
-        try {
-            kq = productDao.deleteProduct(product_id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        kq = productDao.deleteProduct(product_id);
         logger.error("id san pham : "+product_id);
 
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());

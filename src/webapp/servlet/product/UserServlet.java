@@ -29,6 +29,7 @@ import java.util.List;
 
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
+
     public static final Logger logger = LogManager.getRootLogger();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -74,7 +75,7 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
 
     }
 }

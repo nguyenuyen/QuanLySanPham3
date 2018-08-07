@@ -25,7 +25,7 @@ public class Login extends HttpServlet {
 
     Logger logger = LogManager.getRootLogger();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
         String user = request.getParameter("email");
         String pass = request.getParameter("pwd");

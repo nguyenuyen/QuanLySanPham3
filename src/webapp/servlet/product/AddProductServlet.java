@@ -59,7 +59,7 @@ public class AddProductServlet extends HttpServlet {
            Product_logDao.AddProduct_log(product_log);
            resp.sendRedirect("/UserServlet");
         } else {
-            throw new ServletException("HTTP GET Method Is Not Supported");
+            throw new ServletException("HTTP post Method Is Not Supported");
 
         }
     }

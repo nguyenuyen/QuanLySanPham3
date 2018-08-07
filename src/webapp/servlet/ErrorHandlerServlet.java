@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 @WebServlet("/error")
 public class ErrorHandlerServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
@@ -18,7 +18,7 @@ public class ErrorHandlerServlet extends HttpServlet {
         handleRequest(request, response);
     }
 
-    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");

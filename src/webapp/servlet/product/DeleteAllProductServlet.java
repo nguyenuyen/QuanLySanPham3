@@ -1,5 +1,9 @@
 package webapp.servlet.product;
 
+import dao.ProductDao;
+import model.UserAccount;
+import utils.AppUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,12 +15,19 @@ import java.util.List;
 
 @WebServlet("/DeleteAllProductServlet")
 public class DeleteAllProductServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ProductDao productDao = new ProductDao();
+        UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
+        String[] value =  request.getParameterValues("check");
+        int s = productDao.deleteAllProduct(value);
+        if(s ==1 )
+        response.sendRedirect(request.getContextPath() +"/UserServlet");
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+
+
 
     }
 }

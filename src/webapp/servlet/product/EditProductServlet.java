@@ -25,7 +25,7 @@ import java.util.Date;
 public class EditProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
         String price = request.getParameter("price");
         String type = request.getParameter("type");

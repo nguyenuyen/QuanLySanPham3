@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet( "/CheckMailServlet")
 public class CheckMailServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String email= request.getParameter("email");
         UserDao userDao=  new UserDao();
         if (userDao.findUser(email) != null) {
@@ -22,7 +22,7 @@ public class CheckMailServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
     }
 }
