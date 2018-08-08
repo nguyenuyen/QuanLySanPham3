@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -245,4 +247,41 @@ public class ProductDao {
         return 0;
     }
 
+    public List<Product> findAllProductToExport(String email) {
+        Connection conn = null;
+        List<Product> products = new ArrayList<>();
+        NumberFormat formatter = new DecimalFormat("#,###,###");
+        int id =0 ;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            String query1 ="select id from users where email=?";
+            PreparedStatement ps = conn.prepareStatement(query1);
+            ps.setString(1,email);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                id = rs.getInt(1);
+            }
+            String sql = "select p.name,p.id, p.price ,p.user_id,t.name as type,p.create_at from product as p  inner join type t on p.type_id = t.id where p.user_id =? order by price ";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+            logger.error(ps.toString());
+            rs = ps.executeQuery();
+            String time;
+            while (rs.next()) {
+                String s= rs.getString("create_at");
+                logger.error("create_at : " + s);
+                time = splitTime(s);
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), (rs.getString("price")), rs.getString("type"),time));
+            }
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return products;
+    }
 }

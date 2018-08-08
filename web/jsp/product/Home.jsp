@@ -73,8 +73,16 @@
                 }
             });
 
-
-
+            $("#exportExcel").click( function(e) {
+                        $.ajax({
+                            type: "get",
+                            url: "${pageContext.request.contextPath}/ExportExcelServlet",
+                            cache:false,
+                            success: function(response) {
+                                alert(response);
+                            }
+                        });
+            });
         });
 
 
@@ -163,6 +171,9 @@
                 </input>  &nbsp;  &nbsp;
 
                 <input type="submit" id = "deleteAll" class="btn btn-primary" value="Delete All"  onclick="return confirmDelete()" >
+                </input> &nbsp;  &nbsp;
+
+                <input type="button" id="exportExcel" class="btn btn-primary" value="Export Excel" >
                 </input> <br><br>
 
                 <a href="${pageContext.request.contextPath}/HomeServlet">Quản lí sản phẩm </a> <br><br>
