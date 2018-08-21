@@ -18,11 +18,11 @@
             <div class="col-md-4 col-md-offset-4" style="background-color:lightcyan;">
                 <h1>Đăng nhập</h1>
                 <div class="form-group">
-                    <label>Email:</label>
+                    <label>Email*</label>
                     <input type="text" class="form-control" name="email"  requiredid="email" value="${cookie.cookieName.value}">
                 </div>
                 <div class="form-group">
-                    <label>Password:</label>
+                    <label>Password*</label>
                     <input type="password" class="form-control" name="pwd" id="pwd"  maxlength="16" value="${cookie.cookiePass.value}">
                 </div>
                 <div class="checkbox">

@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "ShowProduct");
-        request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));
+        request.setAttribute("loginUser", userDao.findUser(loginUser.getEmail()));
 
         ProductDao productDao = new ProductDao();
         request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
@@ -57,7 +57,9 @@ public class UserServlet extends HttpServlet {
         Product_logDao.AddProduct_log(product_log);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         dispatcher.forward(request, response);
-      /* int page =1;
+
+/*
+      int page =1;
         int recordsPerpage =5;
         if(request.getParameter("page") != null)
         {
@@ -71,11 +73,12 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("noOfPages", noOfPages);
         request.setAttribute("currentPage", page);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request,response);*/
+        dispatcher.forward(request,response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest requset, HttpServletResponse resp) {
 
+    } */
     }
 }

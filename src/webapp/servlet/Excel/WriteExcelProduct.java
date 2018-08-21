@@ -16,8 +16,8 @@ import static webapp.servlet.Excel.CreateWriteProduct.createOutputFile;
 public class WriteExcelProduct {
     public static  final  int COLUMN_INDEX = 0;
     public static  final  int COLUMN_INDEX_NAME = 1;
-    public static  final  int COLUMN_INDEX_PRICE = 2;
-    public static  final  int COLUMN_INDEX_TYPE = 3;
+    public static  final  int COLUMN_INDEX_PRICE = 3;
+    public static  final  int COLUMN_INDEX_TYPE = 2;
     public static  final  int COLUMN_INDEX_CREATE_AT = 4;
     public static CellStyle cellStyleFormatNumber = null;
 

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.print.Book;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 import static webapp.servlet.Excel.WriteExcelProduct.writeExcel;
@@ -24,11 +25,12 @@ public class ExportExcelServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         ProductDao productDao = new ProductDao();
-        final List<Product> productList = productDao.findAllProductToExport(loginUser.getEmail());
+         List<Product> productList = productDao.findAllProductToExport(loginUser.getEmail());
         System.out.println("124324");
-        final String excelFilePath = "D:/a.xlsx";
+        String excelFilePath = "D:/a"+timestamp+".xlsx";
         writeExcel(productList, excelFilePath);
         if(productList != null)
         {

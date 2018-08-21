@@ -38,7 +38,8 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String name = req.getParameter("name");
-        String price = req.getParameter("price");
+        String p = req.getParameter("price");
+        int price = Integer.parseInt(p);
         String type = req.getParameter("name_type");
 
         logger.error("name:"+name+" gia : " +price +"name_type : "+ type );

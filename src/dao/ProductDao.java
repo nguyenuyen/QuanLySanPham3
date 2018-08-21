@@ -57,7 +57,7 @@ public class ProductDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2, product.getUser_id());
-            ps.setString(3, product.getPrice());
+            ps.setInt(3, product.getPrice());
             ps.setString(4, name);
             logger.error(ps.toString());
             int kq = ps.executeUpdate();
@@ -97,7 +97,7 @@ public class ProductDao {
             if(rs.next()){
                 id = rs.getInt(1);
             }
-            String sql = "select p.name,p.id, p.price ,p.user_id,t.name as type,p.create_at from product as p  inner join type t on p.type_id = t.id where p.user_id =? ";
+            String sql = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.product_id = p.id where p.user_id = ? ";
              ps = conn.prepareStatement(sql);
              ps.setInt(1,id);
             logger.error(ps.toString());
@@ -107,7 +107,7 @@ public class ProductDao {
                 String s= rs.getString("create_at");
                 logger.error("create_at : " + s);
                 time = splitTime(s);
-                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"),time));
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time,rs.getString("url")));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -129,7 +129,7 @@ public class ProductDao {
             String sql = "update product set name = ?, price = ?, type_id = (select id from type where type.name = ?) where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
-            ps.setString(2,product.getPrice());
+            ps.setInt(2,product.getPrice());
             ps.setString(3, product.getType());
             ps.setInt(4, product.getId());
             logger.error(ps.toString());
@@ -194,7 +194,7 @@ public class ProductDao {
             logger.error(ps.toString());
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
-                product = new Product(resultSet.getString("name"), resultSet.getString("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
+                product = new Product(resultSet.getString("name"), resultSet.getInt("price"), resultSet.getString("type"), resultSet.getInt("user_id"));
                 // logger.error(product);
             }
 
@@ -271,7 +271,7 @@ public class ProductDao {
                 String s= rs.getString("create_at");
                 logger.error("create_at : " + s);
                 time = splitTime(s);
-                products.add(new Product(rs.getInt("id"), rs.getString("name"), (rs.getString("price")), rs.getString("type"),time));
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time,rs.getString("url")));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
@@ -284,4 +284,34 @@ public class ProductDao {
         }
         return products;
     }
+    public int addImage( String url) {
+        ConnectDatabase myConnect = new ConnectDatabase();
+        Connection conn = null;
+        try {
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            if (conn == null) return 0;
+            String sql = "insert into picture (url )  values (?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,url);
+
+            logger.error(ps.toString());
+            int kq = ps.executeUpdate();
+            if (kq > 0) {
+                return 1;
+            } else {
+                throw new SQLException("khong ket noi duoc database loi Exception");
+            }
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
+
 }

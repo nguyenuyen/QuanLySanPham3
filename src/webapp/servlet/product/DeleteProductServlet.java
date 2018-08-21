@@ -22,6 +22,7 @@ import java.util.Date;
 @WebServlet("/DeleteProductServlet")
 public class DeleteProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
 
@@ -30,11 +31,11 @@ public class DeleteProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
-        request.getSession().setAttribute("product_id",product_id);
+        request.getSession().setAttribute("product_id", product_id);
         ProductDao productDao = new ProductDao();
         int kq = 0;
-        kq = productDao.deleteProduct(product_id);
-        logger.error("id san pham : "+product_id);
+
+        logger.error("id san pham : " + product_id);
 
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
 
@@ -43,18 +44,19 @@ public class DeleteProductServlet extends HttpServlet {
         timestamp = new Timestamp(date.getTime());
         Product_log product_log = new Product_log(loginUser.getEmail(), timestamp, "DeleteProduct");
 
-        logger.error("email:"+loginUser.getEmail()+" time : " +timestamp +" DeleteProduct");
+        logger.error("email:" + loginUser.getEmail() + " time : " + timestamp + " DeleteProduct");
 
-        request.setAttribute("isErrorDelete", kq == 1 ? 1 : 0);
+        //   request.setAttribute("isErrorDelete", kq == 1 ? 1 : 0);
+        kq = productDao.deleteProduct(product_id);
 
-        logger.error("ket qua DeleteProduct: "+kq );
+        logger.error("ket qua DeleteProduct: " + kq);
 
-        request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
+         request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
         Product_logDao.AddProduct_log(product_log);
 
-      //  RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/product/Home.jsp");
-      //  dispatcher.forward(request,response);
+        //  RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/product/Home.jsp");
+        //  dispatcher.forward(request,response);
         response.sendRedirect("/UserServlet");
     }
 }

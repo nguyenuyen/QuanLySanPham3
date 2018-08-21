@@ -7,6 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
+        $(document).ready(function () {
+            if(true){
+                var name = $('#name').val();
+                $.post('CheckMailServlet', {'name': name}, function (responseText) {
+                    $('#spnEmailStatus').html(responseText);
+                    $('#spnEmailStatus').css('color', 'red');
+                });
+            }
+            else
+            {
+                $('#spnEmailStatus').html("");
+            }
+
+        }
         function  myfunction() {
             var text= document.getElementById("type").value;
             var data = document.getElementById("name");
@@ -31,7 +45,8 @@
             <h1>Them The Loai</h1>
             <div class="form-group">
                 <label >Name:</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name"> <span
+                    id="spnEmailStatus"></span>
             </div>
             <div class="form-group">
                 <label>Thể loại :</label>
@@ -43,7 +58,7 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="btn btn-default" id="them" >Them</button>
+                <button type="submit" class="btn btn-default" id="Add" >Add</button>
             </div>
         </div>
     </div>

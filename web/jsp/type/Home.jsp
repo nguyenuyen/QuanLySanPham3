@@ -17,7 +17,34 @@
     <script>
 
         $(document).ready(function () {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                "scrollY": "50vh",
+                "scrollCollapse": true,
+            });
+
+
+            $("#checkedAll").on('click',function(){
+                if($(this).is(':checked',true)) {
+                    $(".checkSingle").prop('checked', true);
+                }
+                else {
+                    $(".checkSingle").prop('checked', false);
+                }
+
+            });
+
+            $(".checkSingle").click(function () {
+                if ($(this).is(":checked")){
+                    var isAllChecked = 0;
+                    $(".checkSingle").each(function(){
+                        if(!this.checked)
+                            isAllChecked = 1;
+                    });
+                    if(isAllChecked == 0){ $("#checkedAll").prop("checked", true); }
+                }else {
+                    $("#checkedAll").prop("checked", false);
+                }
+            });
         });
 
         function confirmDelete() {
@@ -31,17 +58,17 @@
         }
     </script>
 
-    <title>Quản lí thể loại</title>
+    <title>Quản lý thể loại</title>
 </head>
 <body>
-<form method="get" action="/AddProductServlet">
+<form method="post" action="/DeleteAllTypeServlet">
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right; padding: 30px; text-align: right;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
             <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
-            <h1>Quản lí thể loại</h1>
+            <h1>Quản lý thể loại</h1>
         </div>
     </div>
     <div class="container">
@@ -49,41 +76,37 @@
         <table   id="example" class="table table-striped table-bordered" style="width:100%" cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>id</th>
+                <th> <label><input type="checkbox" id = "checkedAll" name = "checkedAll"  value="" > </label></th>
+                <th>no</th>
                 <th>name</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>action</th>
+
             </tr>
             </thead>
             <tbody>
-            <c:if test="${isError == '1'}">
-                <script>
-                    alert("Ban da sua thanh cong");
-                </script>
-            </c:if>
 
-            <c:if test="${isErrorDelete == '1'}">
-                <script>
-                    alert("Ban da xoa thanh cong");
-                </script>
-            </c:if>
-
+            <% int i = 1; %>
             <c:forEach items="${listType}" var="list">
-                <tr>
-                    <td>${list.id}</td>
+                <tr  id="${list.id}">
+                    <td><label><input type="checkbox" id="check" name ="check"class="checkSingle" value ="${list.id}" > </label></td>
+                    <td><%= i %> <% i++; %></td>
                     <td>${list.name}</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                            href="${pageContext.request.contextPath}/EditTypeServlet?id=${list.id}">Edit</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                            href="${pageContext.request.contextPath}/DeleteTypeServlet?id=${list.id} "
+                    <td class="center"><i class="fa fa-trash-o  fa-fw" ></i><a
+                            href="${pageContext.request.contextPath}/EditTypeServlet?id=${list.id}">Edit</a> &emsp;  &emsp;  &emsp;  &emsp;
+                    <a href="${pageContext.request.contextPath}/DeleteTypeServlet?id=${list.id} "
                             onclick="return confirmDelete()">Delete</a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
         <input type="button" class="btn btn-primary" value="Add Type"
-               onclick='window.location="${pageContext.request.contextPath}/AddTypeServlet"'> </input> <br> <br>
-        <a href="${pageContext.request.contextPath}/HomeServlet">Quản lí sản phẩm </a> <br><br>
+               onclick='window.location="${pageContext.request.contextPath}/AddTypeServlet"'> </input>
+        &nbsp;  &nbsp;
+
+        <input type="submit" id = "deleteAll" class="btn btn-primary" value="Delete All"  onclick="return confirmDelete()" >
+        </input> <br><br>
+
+        <a href="${pageContext.request.contextPath}/UserServlet">Quản lý sản phẩm </a>
     </div>
 </form>
 </body>

@@ -18,12 +18,22 @@
     <script>
 
         $(document).ready(function () {
-            $('#example').DataTable();
+           // $('#example').DataTable();
 
           /*  $("#checkAll").click(function () {
                 $('input:checkbox').not(this).prop('checked', this.checked);
             });
+
 */
+
+            $('#example').DataTable({
+                "scrollY": "50vh",
+                "scrollCollapse": true,
+
+
+            });
+
+
             $("#checkedAll").on('click',function(){
                 if($(this).is(':checked',true)) {
                     $(".checkSingle").prop('checked', true);
@@ -47,7 +57,7 @@
                 }
             });
 
-            $("#").click( function(e) {
+          /*  $("#").click( function(e) {
                 var product = [];
                 $(".checkSingle:checked").each(function() {
                     product.push($(this).data('value'));
@@ -58,7 +68,7 @@
                         var selected_values = product.join(",");
                         $.ajax({
                             type: "post",
-                            url: "${pageContext.request.contextPath}/DeleteAllProductServlet",
+                            url: "/DeleteAllProductServlet",
                             cache:false,
                             data: 'product_id='+selected_values,
                             success: function(response) {
@@ -71,7 +81,7 @@
                         });
                     }
                 }
-            });
+            });*/
 
             $("#exportExcel").click( function(e) {
                         $.ajax({
@@ -83,6 +93,7 @@
                             }
                         });
             });
+
         });
 
 
@@ -95,9 +106,23 @@
                 return false;
             }
         }
-    </script>
 
-    <title>Quản lí sản phẩm</title>
+
+    </script>
+    <style>
+
+
+
+        .zoom:hover {
+            -ms-transform: scale(2); /* IE 9 */
+            -webkit-transform: scale(2); /* Safari 3-8 */
+            transform: scale(2);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <title>Quản lý sản phẩm</title>
 </head>
 <body>
 <form method="post" action="/DeleteAllProductServlet">
@@ -124,44 +149,36 @@
                      <input type="submit" class="btn btn-primary" value="Search" ></input> <br>
                  </div>
      -->
-                <table id="example" class="table table-striped table-bordered" style="width:100%" cellpadding="0"
-                       cellspacing="0" border="0">
+                <% int i = 1; %>
+                <table id="example" class="table table-striped table-bordered"  cellpadding="0"
+                       cellspacing="0" border="0" >
                     <thead>
                     <tr>
                         <th> <label><input type="checkbox" id = "checkedAll" name = "checkedAll"  value="" > </label></th>
                         <th>no</th>
                         <th>name</th>
-                        <th>price</th>
+                        <th>picture</th>
                         <th>type</th>
+                        <th>price</th>
                         <th>create_at</th>
                         <th>action</th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <c:if test="${isError == '1'}">
-                        <script>
-                            alert("Ban da sua thanh cong");
-                        </script>
-                    </c:if>
 
-                    <c:if test="${isErrorDelete == '1'}">
-                        <script>
-                            alert("Ban da xoa thanh cong");
-                        </script>
-                    </c:if>
                     <c:forEach items="${listProduct}" var="product">
                         <tr id="${product.id}">
                             <td><label><input type="checkbox" id="check" name ="check"class="checkSingle" value ="${product.id}" > </label></td>
-                            <td></td>
+                            <td><%= i %> <% i++; %></td>
                             <td>${product.name}</td>
-                            <td> <fmt:formatNumber type="number"  pattern="###,###" value="${product.price}"/> VNĐ</td>
+                            <td  class="zoom" >  <img src="${product.url}" alt="picture" width="80px" height="80px"></td>
                             <td>${product.type}</td>
+                            <td> <fmt:formatNumber type="number"  pattern="###,###" value="${product.price}"/> VNĐ</td>
                             <td> ${product.create_at}</td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                                     href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}"> edit</a>&nbsp;  &nbsp;
-                           <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
-                                    onclick="return confirmDelete()">delete</a>  </td>
+                           <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}" onclick="return confirmDelete()">delete</a>  </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -173,10 +190,14 @@
                 <input type="submit" id = "deleteAll" class="btn btn-primary" value="Delete All"  onclick="return confirmDelete()" >
                 </input> &nbsp;  &nbsp;
 
-                <input type="button" id="exportExcel" class="btn btn-primary" value="Export Excel" >
+                <input type="button" id="exportExcel" class="btn btn-primary" value="Export Excel">
                 </input> <br><br>
 
-                <a href="${pageContext.request.contextPath}/HomeServlet">Quản lí sản phẩm </a> <br><br>
+                Select a file: <input type="file" name="myFile"> <br><br>
+                <input type="button" onclick="" class="btn btn-primary" value="ImpotFile"> <br><br>
+
+
+                <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a> <br><br>
             </div>
         </div>
     </div>

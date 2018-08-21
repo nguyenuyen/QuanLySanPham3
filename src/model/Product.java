@@ -6,20 +6,30 @@ import java.sql.Timestamp;
 public class Product {
     private int id;
     private String name;
-    private String price;
+    private int price;
     private String type;
     private int user_id;
     private String create_at;
+    private String url;
 
-
-
-    public Product(int id, String name, String price, String type, int user_id, String create_at) {
+    public Product(int id, String name, int price, String type, int user_id, String create_at, String url) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.type = type;
         this.user_id = user_id;
         this.create_at = create_at;
+        this.url = url;
+    }
+
+    public Product(int id, String name, int price, String type, int user_id, String create_at) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.user_id = user_id;
+        this.create_at = create_at;
+
     }
 
     public Product() {
@@ -34,7 +44,7 @@ public class Product {
         this.user_id = user_id;
     }
 
-    public Product(String name, String price, String type, int user_id) {
+    public Product(String name, int price, String type, int user_id) {
 
         this.name = name;
         this.price = price;
@@ -42,14 +52,15 @@ public class Product {
         this.user_id = user_id;
     }
 
-    public Product(int id, String name, String price, String type,String create_at) {
+    public Product(int id, String name, int price, String type,String create_at,String url) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.type = type;
         this.create_at = create_at;
+        this.url = url;
     }
-    public Product(int id, String name, String price, String type) {
+    public Product(int id, String name, int price, String type) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -72,11 +83,11 @@ public class Product {
         this.name = name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -93,5 +104,12 @@ public class Product {
 
     public void setCreate_at(String create_at) {
         this.create_at = create_at;
+    }
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -27,7 +27,8 @@ public class EditProductServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
-        String price = request.getParameter("price");
+        String p = request.getParameter("price");
+        int price = Integer.parseInt(p);
         String type = request.getParameter("type");
 
         logger.error("name:"+name+" gia : " +price +"type : "+ type +"gia : "+price);

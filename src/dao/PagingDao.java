@@ -34,7 +34,7 @@ public class PagingDao {
             ps.setInt(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
+            //    list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
 
             }
             String sql ="SELECT COUNT(*) as tong from product where user_id =?";
@@ -115,7 +115,7 @@ public class PagingDao {
             ps.setInt(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
+              //  list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
 
             }
             String sql ="SELECT COUNT(*) as tong from product ,type where type_id =type.id and ( product.name like '%"+s+"%' or type.name like  '%"+s+"%') ";

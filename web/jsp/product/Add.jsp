@@ -84,7 +84,7 @@
                     <input type="text" class="form-control" name="price" required id="price">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-default">Thêm</button>
+                    <button type="submit" class="btn btn-default">Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 </div>
             </div>

@@ -57,7 +57,7 @@
                     <input type="text" class="form-control" name="price" value="${product.price}" id="price" required>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-default" >Sửa</button>
+                    <button type="submit" class="btn btn-default" >Edit</button>
                 </div>
             </div>
         </div>

@@ -21,8 +21,6 @@
                 else if (true) {
                     var email = $('#email').val();
                     $.post('CheckMailServlet', {'email': email}, function (responseText) {
-                        // isMessage = responseText;
-                        // console.log(responseText);
                         $('#spnEmailStatus').html(responseText);
                         $('#spnEmailStatus').css('color', 'red');
                     });
@@ -168,7 +166,7 @@
 
 <form method="post" action="/AddUserServlet" onsubmit="return(checkInput());">
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
-        <div style="float: right">
+        <div style="float: right;padding: 30px; text-align: right;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
             <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
@@ -178,31 +176,32 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-4 col-md-offset-3">
                 <h1>Thêm User</h1>
                 <div class="form-group">
-                    <label>Name:</label>
+                    <label>Name*</label>
                     <input type="text" class="form-control" name="name" id="name" required="required" maxlength="40">
                 </div>
                 <div class="form-group">
-                    <label>Email:</label>
+                    <label>Email*</label>
                     <input type="text" class="form-control" name="email" id="email" required><span
                         id="spnEmailStatus"></span>
                 </div>
                 <div class="form-group">
-                    <label>Sđt:</label>
+                    <label>Phone*</label>
                     <input type="text" class="form-control" name="phone" id="phone" maxlength="11" required> <span
                         id="spnPhoneStatus"></span>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
+                    <label>Password*</label>
                     <input type="password" class="form-control" name="pass" id="pass" maxlength="16"
                            required="required">
                 </div>
-                <div>
-                    <input type="submit" class="btn btn-default" value="Them">
 
-                    <button type="reset" class="btn btn-default">Làm mới</button>
+                <div>
+                    <input type="submit" class="btn btn-default" value="Add">
+
+                    <button type="reset" class="btn btn-default">Reset</button>
                 </div>
             </div>
         </div>

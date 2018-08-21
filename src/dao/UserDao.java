@@ -1,6 +1,7 @@
 package dao;
 
 import connection.ConnectDatabase;
+import model.Product;
 import model.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -256,6 +257,52 @@ public class UserDao {
         return user;
     }
 
+    public  int DeleteAllUser(String[] arr){
+        Connection conn = null;
+        Product product = null;
+        int resultSet = 0 ;
+        try {
 
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            for(int i= 0 ; i<arr.length ; i++)
+            {
+                conn = ConnectDatabase.getConnecttion();
+                if (conn == null) logger.error("loi ket noi database");
+                String sql1 = "delete from user_role as ur where ur.user_id =? ";
+                PreparedStatement ps = conn.prepareStatement(sql1);
+                ps.setInt(1, Integer.parseInt(arr[i]));
+                logger.error(ps.toString());
+                ps.executeUpdate();
+
+                String sql2 = "delete from product where user_id =?";
+                ps = conn.prepareStatement(sql2);
+                ps.setInt(1, Integer.parseInt(arr[i]));
+                logger.error(ps.toString());
+                ps.executeUpdate();
+
+                String sql = "delete from users where id =? ";
+                ps = conn.prepareStatement(sql);
+                ps.setInt(1, Integer.parseInt(arr[i]));
+                logger.error(ps.toString());
+                resultSet = ps.executeUpdate();
+            }
+
+            if (resultSet >0) {
+                // logger.error(product);
+                return 1;
+            }
+
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
 
 }

@@ -56,12 +56,12 @@ public class CreateWriteProduct {
         font.setFontName("Times New Roman");
         font.setBold(true);
         font.setFontHeightInPoints((short) 14); // font size
-        font.setColor(IndexedColors.WHITE.getIndex()); // text color
+        font.setColor(IndexedColors.BLACK.getIndex()); // text color
 
         // Create CellStyle
         CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
         cellStyle.setFont(font);
-     //   cellStyle.setFillForegroundColor(IndexedColors.BLACK.getIndex());
+      cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
         cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
        cellStyle.setBorderBottom(BorderStyle.THIN);
         return cellStyle;

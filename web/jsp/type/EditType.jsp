@@ -44,7 +44,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="btn btn-default" id="them">Sửa</button>
+                    <button type="submit" class="btn btn-default" id="them">Edit</button>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ public class ConnectDatabase {
         try {
             Class.forName("org.postgresql.Driver");
             cons = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/JspServlet", "postgres", "admin");
+                    "jdbc:postgresql://localhost:5432/JspServlet?characterEncoding=UTF‑8", "postgres", "admin");
 
         } catch (ClassNotFoundException | SQLException e) {
 

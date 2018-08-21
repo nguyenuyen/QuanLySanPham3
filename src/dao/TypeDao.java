@@ -158,4 +158,46 @@ public class TypeDao {
         return 0;
     }
 
+    public int deleteAllType(String[] arr)
+    {
+        Connection conn = null;
+        Product product = null;
+      /*  String id_checked = value.trim();
+        String[] arr = id_checked.split(",");*/
+        int resultSet = 0 ;
+        try {
+
+            conn = ConnectDatabase.getConnecttion();
+            if (conn == null) logger.error("loi ket noi database");
+            for(int i= 0 ; i<arr.length ; i++)
+            {
+                String sql ="delete from product as p where type_id = ?";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, Integer.parseInt(arr[i]));
+                ps.executeUpdate();
+                logger.error("xoa san pham lien quan the loai"+ps.toString());
+                String sql1 = "delete from type as ur where id = ? ";
+                ps = conn.prepareStatement(sql1);
+                ps.setInt(1,Integer.parseInt(arr[i]));
+                 resultSet = ps.executeUpdate();
+            }
+
+            if (resultSet >0) {
+                // logger.error(product);
+                return 1;
+            }
+
+        } catch (Exception e) {
+            logger.error("loi Exception: " + e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                logger.error("khong dong ket noi duoc");
+            }
+        }
+        return 0;
+    }
+
+
 }

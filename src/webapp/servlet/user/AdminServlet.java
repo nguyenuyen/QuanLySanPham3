@@ -38,29 +38,27 @@ public class AdminServlet extends HttpServlet {
         Date date = new Date();
         timestamp = new Timestamp(date.getTime());
         User_log user_log = new User_log(loginUser.getEmail(), timestamp, "ShowUser");
-      /*  UserDao userDao=new UserDao();
+
         request.setAttribute("listUser",  userDao.findAllUser());
 
         User_logDao.AddUser_log(user_log);
 
         RequestDispatcher dispatcher =  request.getServletContext().getRequestDispatcher("/jsp/user/Home.jsp");
         dispatcher.forward(request, response);
-        */
-        int page =1;
+
+     /*   int page =1;
         int recordsPerpage =5;
         if(request.getParameter("page") != null)
         {
             page = Integer.parseInt(request.getParameter("page"));
         }
-        PagingDao pagingDao = new PagingDao();
-        List<UserAccount> user = pagingDao.viewAllUser((page - 1)* recordsPerpage , recordsPerpage );
-        int noOfRecords = pagingDao.getNoOfRecords();
-        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 /recordsPerpage);
-        request.setAttribute("listUser", user);
-        request.setAttribute("noOfPages", noOfPages);
-        request.setAttribute("currentPage", page);
+     //   PagingDao pagingDao = new PagingDao();
+     //   List<UserAccount> user = pagingDao.viewAllUser((page - 1)* recordsPerpage , recordsPerpage );
+      ///  int noOfRecords = pagingDao.getNoOfRecords();
+//        request.setAttribute("noOfPages", noOfPages);
+        //request.setAttribute("currentPage", page);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/user/Home.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request,response);*/
     }
 
 

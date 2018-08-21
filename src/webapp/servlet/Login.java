@@ -42,8 +42,8 @@ public class Login extends HttpServlet {
        if (request.getParameter("ghinho") != null) {
             Cookie c = new Cookie("cookieName", user);
             Cookie cookie = new Cookie("cookiePass", pass);
-            cookie.setMaxAge(1000);
-            c.setMaxAge(1000);
+            cookie.setMaxAge(-1);
+            c.setMaxAge(-1);
             response.addCookie(c);
             response.addCookie(cookie);
         }

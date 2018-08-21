@@ -24,15 +24,15 @@
             <span style="color:blue">[ ${loginUser.name} ]</span>
         </div>
         <div style="float: left">
-            <h1>Quản lí sản phẩm </h1>
+            <h1>Trang chủ</h1>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-3" >
-                <h2 style="color: green "> Quản lí sản phẩm </h2>
-                <a href="${pageContext.request.contextPath}/UserServlet">Quản lí sản phẩm </a> <br><br>
-                <a href="${pageContext.request.contextPath}/TypeServlet">Quản lí thể loại </a>
+            <div class="col-md-4 col-md-offset-4" >
+                <h2 style="color: green "> Quản lý sản phẩm </h2>
+                <a href="${pageContext.request.contextPath}/UserServlet">Quản lý sản phẩm </a> <br><br>
+                <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a>
             </div>
         </div>
     </div>
