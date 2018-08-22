@@ -30,9 +30,9 @@ public class ExportExcelServlet extends HttpServlet {
         ProductDao productDao = new ProductDao();
          List<Product> productList = productDao.findAllProductToExport(loginUser.getEmail());
         System.out.println("124324");
-        String excelFilePath = "D:/a"+timestamp+".xlsx";
+        String excelFilePath = "D:/a"+1+".xlsx";
         writeExcel(productList, excelFilePath);
-        if(productList != null)
+        if(productList.size() != 0)
         {
             System.out.println("asasssd");
             String text = "xuat file thanh cong";
@@ -42,7 +42,7 @@ public class ExportExcelServlet extends HttpServlet {
         }
         else
         {
-            String text = "xuat file that bai";
+            String text = "khong co du lieu xuat file that bai";
             response.setContentType("text/plain");
             response.getWriter().write(text);
         }

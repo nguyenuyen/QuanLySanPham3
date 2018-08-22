@@ -47,7 +47,6 @@ public class ProductDao {
     }
 
     public int addProduct(Product product, String name) {
-        ConnectDatabase myConnect = new ConnectDatabase();
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
@@ -97,7 +96,7 @@ public class ProductDao {
             if(rs.next()){
                 id = rs.getInt(1);
             }
-            String sql = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.product_id = p.id where p.user_id = ? ";
+            String sql = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ? ";
              ps = conn.prepareStatement(sql);
              ps.setInt(1,id);
             logger.error(ps.toString());
@@ -284,16 +283,20 @@ public class ProductDao {
         }
         return products;
     }
-    public int addImage( String url) {
-        ConnectDatabase myConnect = new ConnectDatabase();
+
+    public int importProduct(String name,int price, String mail,String type,String url){
         Connection conn = null;
         try {
             conn = ConnectDatabase.getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
             if (conn == null) return 0;
-            String sql = "insert into picture (url )  values (?)";
+            String sql = "insert into product(name,price,user_id,type_id,image_id ) values (?,?,(select id from users where users.email = ?),(select id from type where type.name = ?),(select id from picture where picture.url = ?));";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1,url);
+            ps.setString(1,name);
+            ps.setInt(2,price);
+            ps.setString(3,mail);
+            ps.setString(4,type);
+            ps.setString(5,url);
 
             logger.error(ps.toString());
             int kq = ps.executeUpdate();
@@ -313,5 +316,6 @@ public class ProductDao {
         }
         return 0;
     }
+
 
 }

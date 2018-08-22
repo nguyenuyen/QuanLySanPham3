@@ -94,6 +94,17 @@
                         });
             });
 
+            <%--$("#importExcel").click( function(e) {--%>
+                    <%--$.ajax({--%>
+                    <%--type: "get",--%>
+                    <%--url: "${pageContext.request.contextPath}/ImportServlet",--%>
+                    <%--cache:false,--%>
+                    <%--success: function(response) {--%>
+                        <%--alert(response);--%>
+                    <%--}--%>
+                <%--});--%>
+            <%--});--%>
+
         });
 
 
@@ -193,8 +204,9 @@
                 <input type="button" id="exportExcel" class="btn btn-primary" value="Export Excel">
                 </input> <br><br>
 
-                Select a file: <input type="file" name="myFile"> <br><br>
-                <input type="button" onclick="" class="btn btn-primary" value="ImpotFile"> <br><br>
+                <%--Select a file excel: <input type="file" id="myFile"> <br><br>--%>
+                <input type="button" id="importExcel" class="btn btn-primary" value="ImpotFile"
+                       onclick='window.location="${pageContext.request.contextPath}/ImportServlet"'> <br><br>
 
 
                 <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a> <br><br>
