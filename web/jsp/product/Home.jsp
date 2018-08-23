@@ -85,7 +85,7 @@
 
             $("#exportExcel").click( function(e) {
                         $.ajax({
-                            type: "get",
+                            type: "post",
                             url: "${pageContext.request.contextPath}/ExportExcelServlet",
                             cache:false,
                             success: function(response) {

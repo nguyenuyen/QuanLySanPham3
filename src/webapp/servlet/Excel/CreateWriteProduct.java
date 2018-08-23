@@ -99,15 +99,14 @@ public class CreateWriteProduct {
 
         cell = row.createCell(COLUMN_INDEX_PRICE);
         cell.setCellValue(product.getPrice());
-        cell.setCellStyle(cellStyleFormatNumber);
+      //  cell.setCellStyle(cellStyleFormatNumber);
 
         cell = row.createCell(COLUMN_INDEX_TYPE);
         cell.setCellValue(product.getType());
-        cell.setCellStyle(cellStyleFormatNumber);
 
         cell = row.createCell(COLUMN_INDEX_CREATE_AT);
         cell.setCellValue(product.getCreate_at());
-        cell.setCellStyle(cellStyleFormatNumber);
+
 
         String columnPrice = CellReference.convertNumToColString(COLUMN_INDEX_PRICE);
 

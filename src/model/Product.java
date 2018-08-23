@@ -32,8 +32,13 @@ public class Product {
 
     }
 
-    public Product() {
 
+    public Product(int id, String name, int price, String type, String create_at) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.create_at = create_at;
     }
 
     public int getUser_id() {

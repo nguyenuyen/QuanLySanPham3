@@ -270,7 +270,7 @@ public class ProductDao {
                 String s= rs.getString("create_at");
                 logger.error("create_at : " + s);
                 time = splitTime(s);
-                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time,rs.getString("url")));
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time));
             }
         } catch (Exception e) {
             logger.error("loi Exception: " + e.getMessage());
