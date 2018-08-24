@@ -6,6 +6,7 @@ import dao.TypeDao;
 import model.Image;
 import model.Type;
 import model.UserAccount;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,6 +17,7 @@ import utils.AppUtils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,6 +28,7 @@ public class ExcelToDatabase {
     ImageDao imageDao = new ImageDao();
     ArrayList<String> listType = new ArrayList<>();
     ArrayList<String> listTypeAfter = new ArrayList<>();
+    ArrayList<String> listImageAfter = new ArrayList<>();
     List<Type> list = new ArrayList<>();
     List<String> listImageByExcel = new ArrayList<>();
     List<Image> listImage = new ArrayList<>();
@@ -34,8 +37,9 @@ public class ExcelToDatabase {
     //String mail ="hanh@gmail.com";
     String type = null;
 
-    public int ReadExcelInsertDatabase(String mail) throws IOException {
-        FileInputStream inputStream = new FileInputStream("D:\\b.xlsx");
+    public int ReadExcelInsertDatabase(String mail, InputStream inputStream) throws IOException {
+
+      //  FileInputStream inputStream = new FileInputStream("D:\\Book1.xlsx");
         // POIFSFileSystem file = new POIFSFileSystem(inputStream);
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
         Sheet sheet = workbook.getSheetAt(0);
@@ -50,11 +54,19 @@ public class ExcelToDatabase {
         for (int i = 2; i <= sheet.getLastRowNum(); i++) {
             listImageByExcel.add(sheet.getRow(i).getCell(4).getStringCellValue());
         }
+        // loc danh sach trung nhau
         for (String element : listType) {
             if (!listTypeAfter.contains(element)) {
                 listTypeAfter.add(element);
             }
         }
+        // khong cho link anh ttrung nhau
+        for (String element : listImageByExcel) {
+            if (!listImageAfter.contains(element)) {
+                listImageAfter.add(element);
+            }
+        }
+//chen the loai
         for (int i = 0; i < listTypeAfter.size(); i++) {
             int k = 0;
             for (int j = 0; j < list.size(); j++) {
@@ -66,15 +78,16 @@ public class ExcelToDatabase {
                 typeDao.addType(listTypeAfter.get(i));
             }
         }
-        for (int i = 0; i < listImageByExcel.size(); i++) {
+        // chen anh
+        for (int i = 0; i < listImageAfter.size(); i++) {
             int k = 0;
             for (int j = 0; j < listImage.size(); j++) {
-                if (listImageByExcel.get(i).equals(listImage.get(j).getUrl())) {
+                if (listImageAfter.get(i).equals(listImage.get(j).getUrl())) {
                     k++;
                 }
             }
             if (k < 1) {
-                imageDao.addImage(listImageByExcel.get(i));
+                imageDao.addImage(listImageAfter.get(i));
             }
 
         }
@@ -91,7 +104,7 @@ public class ExcelToDatabase {
 
 //    public static void main(String[] args) throws IOException {
 //        ExcelToDatabase excelToDatabase = new ExcelToDatabase();
-//       // excelToDatabase.ReadExcelInsertDatabase(mail);
+//       excelToDatabase.ReadExcelInsertDatabase("hanh@gmail.com");
 //    }
 
 }

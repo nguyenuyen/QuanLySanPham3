@@ -33,14 +33,13 @@ public class ExportExcelServlet extends HttpServlet {
         System.out.println("124324");
         while (i > 0) {
             ++i;
-            String excelFilePath = "C:\\Users\\Dell e6430\\IdeaProjects\\QuanLiSanPham\\123\\QuanLySanPham3\\excel\\a" + i + ".xlsx";
+            String excelFilePath = "C:\\Users\\trann\\OneDrive\\Documents\\GitHub\\QuanLySanPham3.1\\QuanLySanPham3\\excel\\a" + i + ".xlsx";
             writeExcel(productList, excelFilePath);
 
             OutputStream out = response.getOutputStream();
             response.setContentType("text/html");
             response.setContentType("APPLICATION/OCTET-STREAM");
-            response.setHeader("Content-Disposition",
-                    "attachment; filename=excel.xlsx");
+            response.setHeader("Content-Disposition", "attachment; filename=excel.xlsx");
             FileInputStream in = new FileInputStream(excelFilePath);
             byte[] buffer = new byte[4096];
             int length;
