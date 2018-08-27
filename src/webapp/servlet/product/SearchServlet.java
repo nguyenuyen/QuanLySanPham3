@@ -42,7 +42,7 @@ public class SearchServlet extends HttpServlet {
             page = Integer.parseInt(request.getParameter("page"));
         }
         PagingDao pagingDao = new PagingDao();
-        List<Product> products = pagingDao.viewAllProductByWord((page - 1)* recordsPerpage , recordsPerpage ,loginUser.getEmail(),s);
+        List<Product> products = pagingDao.viewAllProduct((page - 1)* recordsPerpage , recordsPerpage ,loginUser.getEmail(),s);
         int noOfRecords = pagingDao.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 /recordsPerpage);
         request.setAttribute("listProduct", products);
@@ -50,6 +50,9 @@ public class SearchServlet extends HttpServlet {
         request.setAttribute("currentPage", page);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         dispatcher.forward(request,response);
+        if(noOfPages != 0){
+            response.setContentType("text/plain");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {

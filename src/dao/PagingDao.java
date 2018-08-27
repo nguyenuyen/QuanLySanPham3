@@ -13,12 +13,19 @@ import java.util.List;
 public class PagingDao {
     public static final Logger logger = LogManager.getRootLogger();
     private int noOfRecords;
-    public List<Product> viewAllProduct(int offset, int noOfRecords,String email)
+    public String splitTime(String s)
+    {
+        String[] data = s.split("\\.");
+        return data[0];
+    }
+    public List<Product> viewAllProduct(int offset, int noOfRecords,String email,String s)
     {
         //logger.error("pagingdao : "+query);
         List<Product> list = new ArrayList<Product>();
         Product product = null;
         Connection connection = null;
+        String query = null;
+        String sql = null;
         int id = 0;
         try {
             connection = ConnectDatabase.getConnecttion();
@@ -29,18 +36,33 @@ public class PagingDao {
             if(rs.next()){
                 id = rs.getInt(1);
             }
-            String query = "select p.name,p.id, p.price ,p.user_id,t.name as type from product as p  inner join type t on p.type_id = t.id  where p.user_id =?  limit " +noOfRecords +" OFFSET "+ offset;
+            if(s==null){
+                query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ?  limit " +noOfRecords +" OFFSET "+ offset;
+
+            }else {
+                query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ? and  ( p.name like '%"+s+"%' or t.name like '%"+s+"%' ) limit " +noOfRecords +" OFFSET "+ offset;
+
+            }
+
             ps = connection.prepareStatement(query);
             ps.setInt(1,id);
             rs = ps.executeQuery();
+            String time;
             while (rs.next()) {
-            //    list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
-
+                String str= rs.getString("create_at");
+                logger.error("create_at : " + str);
+                time = splitTime(str);
+                list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time,rs.getString("url")));
             }
-            String sql ="SELECT COUNT(*) as tong from product where user_id =?";
-            ps=connection.prepareStatement(sql);
-            ps.setInt(1,id);
-            rs = ps.executeQuery();
+            if(s == null){
+                sql ="SELECT COUNT(*) as tong from product where user_id =?";
+                ps=connection.prepareStatement(sql);
+                ps.setInt(1,id);
+            }else {
+                sql= "SELECT COUNT(*) as tong from product ,type where type_id =type.id and ( product.name like '%"+s+"%' or type.name like  '%"+s+"%')";
+                ps=connection.prepareStatement(sql);
+            }
+             rs = ps.executeQuery();
             if(rs.next())
                 this.noOfRecords = rs.getInt(1);
         } catch (SQLException e) {
@@ -110,12 +132,16 @@ public class PagingDao {
             if(rs.next()){
                 id = rs.getInt(1);
             }
-            String query = "select p.name,p.id, p.price ,p.user_id,t.name as type from product as p  inner join type t on p.type_id = t.id  where p.user_id =? and  ( p.name like '%"+s+"%' or t.name like '%"+s+"%' or p.price like '%"+s+"%') limit " +noOfRecords +" OFFSET "+ offset;
+            String query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ? and  ( p.name like '%"+s+"%' or t.name like '%"+s+"%' ) limit " +noOfRecords +" OFFSET "+ offset;
             ps = connection.prepareStatement(query);
             ps.setInt(1,id);
             rs = ps.executeQuery();
+            String time;
             while (rs.next()) {
-              //  list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("price"), rs.getString("type"), rs.getInt("user_id"),rs.getString("create_at")));
+                String str= rs.getString("create_at");
+                logger.error("create_at : " + str);
+                time = splitTime(s);
+                list.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getInt("price"), rs.getString("type"),time,rs.getString("url")));
 
             }
             String sql ="SELECT COUNT(*) as tong from product ,type where type_id =type.id and ( product.name like '%"+s+"%' or type.name like  '%"+s+"%') ";

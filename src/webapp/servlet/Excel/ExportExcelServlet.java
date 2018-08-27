@@ -7,6 +7,7 @@ import utils.AppUtils;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,35 +36,31 @@ public class ExportExcelServlet extends HttpServlet {
             ++i;
             String excelFilePath = "C:\\Users\\trann\\OneDrive\\Documents\\GitHub\\QuanLySanPham3.1\\QuanLySanPham3\\excel\\a" + i + ".xlsx";
             writeExcel(productList, excelFilePath);
+            File file = new File(excelFilePath);
 
-            OutputStream out = response.getOutputStream();
-            response.setContentType("text/html");
-            response.setContentType("APPLICATION/OCTET-STREAM");
-            response.setHeader("Content-Disposition", "attachment; filename=excel.xlsx");
-            FileInputStream in = new FileInputStream(excelFilePath);
-            byte[] buffer = new byte[4096];
-            int length;
-            while ((length = in.read(buffer)) > 0) {
-                out.write(buffer, 0, length);
+            ServletOutputStream stream = null;
+            BufferedInputStream buf = null;
+            try {
+                stream = response.getOutputStream();
+                // set response headers
+                response.setContentType("application/vnd.ms-excel");
+                response.setContentType("APPLICATION/OCTET-STREAM");
+                response.addHeader("Content-Disposition", "attachment; filename=excel.xlsx");
+                response.setContentLength((int) file.length());
+                buf = new BufferedInputStream(new FileInputStream(file));
+                int readBytes = 0;
+                while ((readBytes = buf.read()) != -1)
+                    stream.write(readBytes);
+            } finally {
+                if (stream != null)
+                    stream.flush();
+                stream.close();
+                if (buf != null)
+                    buf.close();
             }
-            in.close();
-            out.flush();
             break;
         }
 
-        if (productList.size() > 0)
-        {
-            String text = "xuat file thanh cong";
-            response.setContentType("text/plain");
-            response.getWriter().write(text);
-
-        } else
-
-        {
-            String text = "khong co du lieu xuat file that bai";
-            response.setContentType("text/plain");
-            response.getWriter().write(text);
-        }
 
     }
 

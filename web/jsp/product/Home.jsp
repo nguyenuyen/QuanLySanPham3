@@ -25,13 +25,13 @@
               });
 
   */
-
-            $('#example').DataTable({
-                "scrollY": "50vh",
-                "scrollCollapse": true,
-
-
-            });
+            //
+            // $('#example').DataTable({
+            //     "scrollY": "50vh",
+            //     "scrollCollapse": true,
+            //
+            //
+            // });
 
 
             $("#checkedAll").on('click', function () {
@@ -86,6 +86,7 @@
               });*/
 
             $("#exportExcel").click(function (e) {
+
                 $.ajax({
                     type: "post",
                     url: "${pageContext.request.contextPath}/ExportExcelServlet",
@@ -96,14 +97,25 @@
                 });
             });
 
-
-
+            <%--$("#searchData").submit(function (e) {--%>
+            <%--var searchdata = document.getElementById("search").value;--%>
+            <%--$.ajax({--%>
+            <%--type: "post",--%>
+            <%--url: "${pageContext.request.contextPath}/SearchServlet",--%>
+            <%--cache: false,--%>
+            <%--data: 'search='+searchdata,--%>
+            <%--success: function (response) {--%>
+            <%--alert("thanh cong ");--%>
+            <%--window.onload;--%>
+            <%--}--%>
+            <%--});--%>
+            <%--});--%>
         });
 
 
         function importExcel() {
-            var s= document.getElementById("myFile");
-            if(s == null){
+            var s = document.getElementById("myFile");
+            if (s == null) {
                 alert("ban chua chon file");
                 return false;
             }
@@ -120,7 +132,18 @@
             }
         }
 
-
+        function submitx(v) {
+            var frm = document.form1;
+            if (v == "1") {
+                frm.action = "/DeleteAllProductServlet";
+            } else if (v == "2") {
+                frm.action = "/ExportExcelServlet";
+            }
+            else {
+                frm.action = "/SearchServlet";
+            }
+            frm.submit();
+        }
     </script>
     <style>
 
@@ -137,7 +160,7 @@
     <title>Quản lý sản phẩm</title>
 </head>
 <body>
-<form method="post" action="/DeleteAllProductServlet">
+<form method="post" action="" name="form1">
     <div style="background: #E0E0E0; height: 65px; padding: 5px;">
         <div style="float: right;padding: 30px;">
             <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
@@ -153,11 +176,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2>Danh sách các sản phẩm:</h2> <br>
-                <!-- <div style="float: right">
-                     <input name="search">
-                     <input type="submit" class="btn btn-primary" value="Search" ></input> <br>
-                 </div>
-     -->
+                <div style="float: right">
+                    <input name="search">
+                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"
+                           onclick="submitx('3')"/> <br>
+                </div>
+
                 <% int i = 1; %>
                 <table id="example" class="table table-striped table-bordered" cellpadding="0"
                        cellspacing="0" border="0">
@@ -171,7 +195,6 @@
                         <th>price</th>
                         <th>create_at</th>
                         <th>action</th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -195,22 +218,67 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <td>
+                        <%--For displaying Previous link except for the 1st page --%>
+                        <c:if test="${currentPage != 1}">
+                            <!-- <td> --><a href="/UserServlet?page=${currentPage - 1}">&nbsp;Previous</a><!-- </td> -->
+                        </c:if>
+                        <%--For displaying Page numbers.
+                        The when condition does not display a link for the current page--%>
+                        <!-- <table border="1" cellpadding="5" cellspacing="5"> -->
+                        <!--  <tr> -->
+                        <c: if(${noOfPages} gt 5)>
+                            <c:forEach begin="1" end="3" var="i">
+
+                                <c:choose>
+                                    <c:when test="${currentPage eq i}">
+                                        <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
+                                    </c:when>
+                                    <c:otherwise>
+                                        <!-- <td> --><a href="/UserServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                        </c:>
+
+                        <c:forEach begin="1" end="${noOfPages}" var="i">
+
+                            <c:choose>
+                                <c:when test="${currentPage eq i}">
+                                    <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
+                                </c:when>
+                                <c:otherwise>
+                                    <!-- <td> --><a href="/UserServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <!--  </tr> -->
+                        <%--For displaying Next link --%>
+                        <c:if test="${currentPage lt noOfPages}">
+                            <!-- <td> --><a href="/UserServlet?page=${currentPage + 1}">&nbsp;Next</a><!-- </td> -->
+                        </c:if>
+                    </td>
+                </table>
                 <br>
                 <input type="button" class="btn btn-primary" value="Add Product"
                        onclick='window.location="${pageContext.request.contextPath}/AddProductServlet"'>
                 </input> &nbsp; &nbsp;
 
-                <input type="submit" id="deleteAll" class="btn btn-primary" value="Delete All"
-                       onclick="return confirmDelete()">
+                <input type="button" id="deleteAll" class="btn btn-primary" value="Delete All"
+                       onclick="return confirmDelete(), submitx('1')">
                 </input> &nbsp; &nbsp;
-                <a href="${pageContext.request.contextPath}/ExportExcelServlet"  id="exportExcel">
-                    Download File Excel </a><br><br>
-                <%--<input type="button" id="exportExcel" class="btn btn-primary" value="Export Excel">--%>
-                <%--</input> <br><br>--%>
+                <%--<a href="${pageContext.request.contextPath}/ExportExcelServlet"  id="exportExcel">--%>
+                <%--Download File Excel </a><br><br>--%>
+                <input type="button" name="exportExcel" class="btn btn-primary" value="Export Excel"
+                       onclick="submitx('2')">
+                </input> <br><br>
 
                 <%--&lt;%&ndash;Select a file excel: <input type="file" id="myFile"> <br><br>&ndash;%&gt;--%>
                 <%--<input type="button" id="importExcel" class="btn btn-primary" value="ImpotFile"--%>
-                       <%--onclick='window.location="${pageContext.request.contextPath}/ImportServlet"'> <br><br>--%>
+                <%--onclick='window.location="${pageContext.request.contextPath}/ImportServlet"'> <br><br>--%>
 
 
                 <%--<a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a> <br><br>--%>
@@ -226,7 +294,8 @@
         <div class="row">
             <div class="col-lg-12">
                 Select a file excel:
-                <input type="file" id="myFile" name="myFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" > <br><br>
+                <input type="file" id="myFile" name="myFile"
+                       accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"> <br><br>
                 <input type="submit" id="importExcel" class="btn btn-primary" value="Import Excel File"> <br><br>
                 <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a> <br><br>
             </div>

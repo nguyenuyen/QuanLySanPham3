@@ -26,11 +26,11 @@ import java.util.Date;
 import java.util.List;
 
 
-
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
 
     public static final Logger logger = LogManager.getRootLogger();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -43,7 +43,7 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("loginUser", userDao.findUser(loginUser.getEmail()));
 
         ProductDao productDao = new ProductDao();
-        request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
+      //  request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
 
        /* JSONArray jsonArray = (JSONArray)JSONSerializer.toJSON(productDao.findAllProduct(loginUser.getEmail()));
@@ -55,30 +55,30 @@ public class UserServlet extends HttpServlet {
 
 */
         Product_logDao.AddProduct_log(product_log);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request, response);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
+//        dispatcher.forward(request, response);
 
-/*
-      int page =1;
-        int recordsPerpage =5;
-        if(request.getParameter("page") != null)
-        {
+
+        int page = 1;
+        int recordsPerpage = 5;
+        if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
         PagingDao pagingDao = new PagingDao();
-        List<Product> products = pagingDao.viewAllProduct((page - 1)* recordsPerpage , recordsPerpage ,loginUser.getEmail());
+        List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(),null);
         int noOfRecords = pagingDao.getNoOfRecords();
-        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 /recordsPerpage);
+        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerpage);
         request.setAttribute("listProduct", products);
         request.setAttribute("noOfPages", noOfPages);
         request.setAttribute("currentPage", page);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest requset, HttpServletResponse resp) {
 
-    } */
     }
 }
+
