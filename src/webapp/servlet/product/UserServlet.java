@@ -7,7 +7,6 @@ import dao.UserDao;
 import model.Product;
 import model.Product_log;
 import model.UserAccount;
-import model.User_log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utils.AppUtils;
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,7 +41,9 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("loginUser", userDao.findUser(loginUser.getEmail()));
 
         ProductDao productDao = new ProductDao();
-      //  request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
+        List<Product> productList = new ArrayList<>();
+        productList = productDao.findAllProduct(loginUser.getEmail());
+        //  request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
 
        /* JSONArray jsonArray = (JSONArray)JSONSerializer.toJSON(productDao.findAllProduct(loginUser.getEmail()));
@@ -59,13 +59,25 @@ public class UserServlet extends HttpServlet {
 //        dispatcher.forward(request, response);
 
 
+        String s = request.getParameter("search");
         int page = 1;
-        int recordsPerpage = 5;
+        String option = request.getParameter("option");
+        int recordsPerpage = 0;
+        if (option == null) {
+            recordsPerpage = 5;
+        }  else {
+            recordsPerpage = Integer.parseInt(request.getParameter("option"));
+        }
+
+
         if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
+        request.getSession().setAttribute("search", s);
+        request.getSession().setAttribute("record", recordsPerpage);
+
         PagingDao pagingDao = new PagingDao();
-        List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(),null);
+        List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(), s);
         int noOfRecords = pagingDao.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerpage);
         request.setAttribute("listProduct", products);
@@ -74,6 +86,7 @@ public class UserServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         dispatcher.forward(request, response);
+
     }
 
     @Override

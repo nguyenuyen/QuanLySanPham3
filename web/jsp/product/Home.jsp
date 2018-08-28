@@ -33,6 +33,32 @@
             //
             // });
 
+            $("#searchData").click(function () {
+                var page = 1;
+                var searchItem = $("#search").val();
+                var option = $("#chose").val();
+                loadPage(searchItem, page, option);
+            })
+            $("#chose").change(function () {
+                var page = 1;
+                var searchItem = $("#search").val();
+                var option = $("#chose").val();
+                loadPage(searchItem, page, option);
+
+            })
+
+            $(".item").on('click', function () {
+                // alert();
+                var page = $(this).val();
+                var searchItem = $("#search").val();
+                var option = $("#chose").val();
+                loadPage(searchItem, page, option);
+            })
+
+            function loadPage(search, page, option) {
+                location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option;
+
+            }
 
             $("#checkedAll").on('click', function () {
                 if ($(this).is(':checked', true)) {
@@ -97,19 +123,6 @@
                 });
             });
 
-            <%--$("#searchData").submit(function (e) {--%>
-            <%--var searchdata = document.getElementById("search").value;--%>
-            <%--$.ajax({--%>
-            <%--type: "post",--%>
-            <%--url: "${pageContext.request.contextPath}/SearchServlet",--%>
-            <%--cache: false,--%>
-            <%--data: 'search='+searchdata,--%>
-            <%--success: function (response) {--%>
-            <%--alert("thanh cong ");--%>
-            <%--window.onload;--%>
-            <%--}--%>
-            <%--});--%>
-            <%--});--%>
         });
 
 
@@ -140,20 +153,54 @@
                 frm.action = "/ExportExcelServlet";
             }
             else {
-                frm.action = "/SearchServlet";
+                //  frm.action = "/SearchServlet";
             }
             frm.submit();
         }
+
+
     </script>
     <style>
 
-
+        .fixed_header tbody{
+            display:block;
+            overflow:auto;
+            height:500px;
+            width:100%;
+        }
+        .fixed_header thead tr{
+            display:block;
+        }
         .zoom:hover {
             -ms-transform: scale(2); /* IE 9 */
             -webkit-transform: scale(2); /* Safari 3-8 */
             transform: scale(2);
             width: 100px;
             height: 100px;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination li {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            font-size: 22px;
+        }
+
+        .pagination li.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination li:hover:not(.active) {
+            background-color: #ddd;
         }
     </style>
 
@@ -177,14 +224,51 @@
             <div class="col-lg-12">
                 <h2>Danh sách các sản phẩm:</h2> <br>
                 <div style="float: right">
-                    <input name="search">
-                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"
-                           onclick="submitx('3')"/> <br>
+                    <input id="search" name="search" value="${search}">
+                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"/> <br>
+                </div>
+                <div style="float: left">
+                    <label>show item : </label>
+                    <select id="chose" name="option">
+                        <c:choose>
+                            <c:when test="${record == 5}">
+                                <option value="5" selected>5</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="5">5</option>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test="${record == 10}">
+                                <option value="10" selected>10</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="10">10</option>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test="${record == 20}">
+                                <option value="20" selected>20</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="20">20</option>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test="${record == 50}">
+                                <option value="50" selected>50</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="50">50</option>
+                            </c:otherwise>
+                        </c:choose>
+
+                    </select>
+
                 </div>
 
                 <% int i = 1; %>
-                <table id="example" class="table table-striped table-bordered" cellpadding="0"
-                       cellspacing="0" border="0">
+                <table id="example" class="table table-striped table-bordered fixed_header" cellpadding="0" cellspacing="0" border="0" >
                     <thead>
                     <tr>
                         <th><label><input type="checkbox" id="checkedAll" name="checkedAll" value=""> </label></th>
@@ -220,45 +304,24 @@
                 </table>
                 </table>
                 <table border="0" cellpadding="0" cellspacing="0">
-                    <td>
-                        <%--For displaying Previous link except for the 1st page --%>
+                    <td class="pagination">
                         <c:if test="${currentPage != 1}">
-                            <!-- <td> --><a href="/UserServlet?page=${currentPage - 1}">&nbsp;Previous</a><!-- </td> -->
+                            <li class="item" value="${currentPage - 1}">&nbsp;Previous</li>
                         </c:if>
-                        <%--For displaying Page numbers.
-                        The when condition does not display a link for the current page--%>
-                        <!-- <table border="1" cellpadding="5" cellspacing="5"> -->
-                        <!--  <tr> -->
-                        <c: if(${noOfPages} gt 5)>
-                            <c:forEach begin="1" end="3" var="i">
-
-                                <c:choose>
-                                    <c:when test="${currentPage eq i}">
-                                        <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
-                                    </c:when>
-                                    <c:otherwise>
-                                        <!-- <td> --><a href="/UserServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:forEach>
-
-                        </c:>
 
                         <c:forEach begin="1" end="${noOfPages}" var="i">
-
                             <c:choose>
                                 <c:when test="${currentPage eq i}">
-                                    <!-- <td> -->${i}&nbsp;&nbsp;<!-- </td> -->
+                                    <li class="item active" value="${i}">${i}&nbsp;</li>
                                 </c:when>
                                 <c:otherwise>
-                                    <!-- <td> --><a href="/UserServlet?page=${i}">${i}&nbsp;</a><!-- </td> -->
+                                    <li class="item" value="${i}">${i}&nbsp;</li>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
-                        <!--  </tr> -->
-                        <%--For displaying Next link --%>
+
                         <c:if test="${currentPage lt noOfPages}">
-                            <!-- <td> --><a href="/UserServlet?page=${currentPage + 1}">&nbsp;Next</a><!-- </td> -->
+                            <li class="item" value="${currentPage + 1}">&nbsp;Next</li>
                         </c:if>
                     </td>
                 </table>
