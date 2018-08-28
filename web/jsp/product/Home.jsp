@@ -55,6 +55,8 @@
                 loadPage(searchItem, page, option);
             })
 
+
+
             function loadPage(search, page, option) {
                 location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option;
 
@@ -152,9 +154,7 @@
             } else if (v == "2") {
                 frm.action = "/ExportExcelServlet";
             }
-            else {
-                //  frm.action = "/SearchServlet";
-            }
+
             frm.submit();
         }
 
@@ -162,14 +162,10 @@
     </script>
     <style>
 
-        .fixed_header tbody{
-            display:block;
-            overflow:auto;
-            height:500px;
-            width:100%;
-        }
-        .fixed_header thead tr{
-            display:block;
+        .scroll {
+            display: block;
+            height: 500px;
+            overflow-y: scroll;
         }
         .zoom:hover {
             -ms-transform: scale(2); /* IE 9 */
@@ -268,7 +264,7 @@
                 </div>
 
                 <% int i = 1; %>
-                <table id="example" class="table table-striped table-bordered fixed_header" cellpadding="0" cellspacing="0" border="0" >
+                <table id="example" class="table table-striped table-bordered scroll " cellpadding="0" cellspacing="0" border="0" >
                     <thead>
                     <tr>
                         <th><label><input type="checkbox" id="checkedAll" name="checkedAll" value=""> </label></th>
@@ -335,7 +331,7 @@
                 </input> &nbsp; &nbsp;
                 <%--<a href="${pageContext.request.contextPath}/ExportExcelServlet"  id="exportExcel">--%>
                 <%--Download File Excel </a><br><br>--%>
-                <input type="button" name="exportExcel" class="btn btn-primary" value="Export Excel"
+                <input type="button" name="exportExcel" class="btn btn-primary" value="Download File Excel"
                        onclick="submitx('2')">
                 </input> <br><br>
 

@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
         UserAccount userAccount = userDao.findUserByEmailandPass(user, pass);
 
         if (userAccount == null) {
-            logger.info("user hoac password khong dung");
+            logger.error("user hoac password khong dung");
         }
        if (request.getParameter("ghinho") != null) {
             Cookie c = new Cookie("cookieName", user);

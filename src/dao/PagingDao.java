@@ -40,7 +40,7 @@ public class PagingDao {
                 query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ?  limit " +noOfRecords +" OFFSET "+ offset;
 
             }else {
-                query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ? and  ( (p.name) like '%"+s+"%' or  (t.name) like '%"+s+"%' ) limit " +noOfRecords +" OFFSET "+ offset;
+                query = "select p.name,p.id, p.price ,p.user_id ,t.name as type,p.create_at ,pic.url from product as p  inner join type t on p.type_id = t.id inner join picture pic on pic.id = p.image_id where p.user_id = ? and  ( p.name like '%"+s+"%' or  t.name like '%"+s+"%' ) limit " +noOfRecords +" OFFSET "+ offset;
 
             }
 
@@ -59,7 +59,7 @@ public class PagingDao {
                 ps=connection.prepareStatement(sql);
                 ps.setInt(1,id);
             }else {
-                sql= "SELECT COUNT(*) as tong from product ,type where type_id =type.id and ( lower (product.name) like '%"+s+"%' or lower (type.name) like  '%"+s+"%')";
+                sql= "SELECT COUNT(*) as tong from product ,type where type_id =type.id and ( product.name like '%"+s+"%' or  type.name like  '%"+s+"%')";
                 ps=connection.prepareStatement(sql);
             }
              rs = ps.executeQuery();

@@ -6,6 +6,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+        function check() {
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("pwd").value;
+            if(email == "" || pass == ""){
+                alert("ban chua nhap email hoac password");
+                return false;
+            }
+            else
+            return true;
+        }
+
     </script>
 
     <title>Đăng nhập</title>
@@ -19,7 +31,7 @@
                 <h1>Đăng nhập</h1>
                 <div class="form-group">
                     <label>Email*</label>
-                    <input type="text" class="form-control" name="email"  requiredid="email" value="${cookie.cookieName.value}">
+                    <input type="text" class="form-control" name="email" id="email"  requiredid="email" value="${cookie.cookieName.value}">
                 </div>
                 <div class="form-group">
                     <label>Password*</label>
@@ -28,7 +40,7 @@
                 <div class="checkbox">
                     <label><input type="checkbox" name="ghinho"> Ghi Nhớ</label>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" onclick="return check()">Submit</button>
             </div>
         </div>
     </div>
