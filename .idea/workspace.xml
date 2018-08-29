@@ -6,57 +6,491 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a304ddd6-5cfc-4487-8308-b47fe890dfba" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/security/MD5Library.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/servlet/ErrorHandlerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgresql_8_3_603_jdbc4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_8_3_603_jdbc4.xml" afterDir="false" />
+    <list default="true" id="a304ddd6-5cfc-4487-8308-b47fe890dfba" name="Default" comment="các file log">
+      <change afterPath="$PROJECT_DIR$/excel/a2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a3.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a4.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a5.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a6.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a7.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excel/a8.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/01mUIL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/068d90_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/09f624_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0CGFSv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0GT1cZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0IwzMT_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0KLjr1_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0VnBnc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0VpZmM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0bBY3F_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0qtcZX_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/0tnsFv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/12ab4e_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/14a20d_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1N3BBH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1V9Svc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1duMfk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1hojCl_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1nGfSq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1oS9ZU_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1rJZxF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/1x4mya_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/20NoZ3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/21Qq1y_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2BDtDV_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2Na4tP_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2QhZsH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2nY85x_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2pRMBx_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/2rCkkF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/304271_10151357823269210_412378371_n_2_1_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/3cfab6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/3ed90f_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/3lxADU_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/3sAuia_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/3xjtt4_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/43bOVR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/46RTkb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/472a03_simg_b5529c_250x250_maxb.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/48E7Bg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/4Bs1GC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/4JGV5H_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/4JponV_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/4ZHcnO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/4c19e7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/51GsN0_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/51ff14_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/56927e_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/584Cpu_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5ALh0D_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5LQw4e_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5Tsluk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5XW9FM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5aVAdV_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5i2Wss_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/5w2NvX_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/654135_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/66Tqvt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6A4PHS_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6HQREe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6L3OUR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6SlIac_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6X8HGL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6ZFhFj_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6emCGO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/6oqpgw_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/72Xzjv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/787c99_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/7giHwk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/7jFBRI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/7yhzyw_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/816d4a_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8AOI08_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8B362w_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8E3AvG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8Kg4o4_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8iFqLY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8m3Mvg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/8tK95A_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/92c20a_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9LBdNx_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9O5aDz_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9XBa8U_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9aYW7z_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9e7711_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9tjmBb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/9u3lSH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/AF5gec_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/AIpcED_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ALkNFA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/AOGuga_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/APxC7U_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ATsCwu_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/AY1uTl_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Ao2rrq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/AoljrA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/B1liXF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BCgUrD_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BFnoVE_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BRqEbS_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BedsQE_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BjyuI8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/BlO549_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Brvpr9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ByVBHi_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/C0spGM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/C1Yn5U_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/C4dM0A_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/CE3qPj_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/CFih63_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Cigbvp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Cn1c8l_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/CuUYUA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/CujGup_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/CwCViL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/DQ3DZK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/DccgTr_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/DeZL5f_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/DmEtzY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/DxR216_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/E0ryit_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/EB5jwK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/EInHJS_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ERfayL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/EVW4n4_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/EeuIfN_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/EnTQAa_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/F7DyEU_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/FA7gms_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/FBBCTj_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/FUeaql_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Faed2C_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/FkHZvm_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/FlVFvj_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Fq8eRR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/G4hosy_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/GC4Eg5_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/GeHNRc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/GlVCew_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/GoZhDp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/H4Qxbp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/HOYPHY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/HSlQi9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/HZM2Wp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/HlZSY7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/IK7mu5_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/IRy1O2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/IhgEfq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/IjEM3i_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/J1jPfJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/J3prVL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/JB4tu9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/JHUsd8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/JaVma4_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/JopH8Z_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/JuPPNk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KEqUkD_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KGczSb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KPDGCK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KSFWlj_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KVg0aE_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KhnYCF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/KjPwqI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/L0BzNB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/L1dcN9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/L9jHN2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/LF25yL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/LZhX5V_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Lfu1GG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/LgeKRc_simg_d6cba7_565-565-0-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Lh9DEJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/LlPn4y_simg_6d9fff_621-621-0-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/M1GgiL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/M3zf0x_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/MX9ESm_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/MfquML_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Molm4i_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/N8GJyp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NB7XiJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NNM3Tb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NR3LIe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NVntLb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NWRYEQ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NXk0g2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NiH9NM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NjbpLd_simg_b5529c_250x250_maxb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NnFktC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/NoITHe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OCUqds_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OEDJim_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OFzjo3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OPAQIj_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OTmZJi_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/OaanBX_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Or6kzq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Oz4F5E_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PMublu_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PTsuBt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PaU9re_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Pd0vP7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PdXDcl_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PhzJzk_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Pv8YGq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Pvj56E_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/PwRx7b_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/QQajoY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/QY400i_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/QclPFN_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Qevoqq_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/R1OiNb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/R4MsZf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/RO8FJK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/RVqEQf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Rz7g37_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SCZtDk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SEKuL6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SFyyHf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SMMTug_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SRLE58_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SSCWyG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Sa8r0p_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SbDVrR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/SzTYot_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/T9aJf8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/TEplRL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/TYyttF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ThcPCA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ThqJBH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/TkPjWO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Tvout0_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/U76fgm_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UA5TdC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UDAaiB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UMhJtu_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UaNzUG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Udy08R_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UjjZiu_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/UyxFxW_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/VEhtcN_simg_8525a0_693-693-0-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/VGTxsL_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/VPiDSz_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Vbt5Kk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/VeEbny_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ViZuGP_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/W2JwOJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/W9URdI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/WrdxV2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Wutprp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/WvfT2P_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Wzdeq3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/X0EUIO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/X9QlLX_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/X9wXgK_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/XDB4kJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/XS8IKn_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/XT1yFQ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Y7YqNC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Y8FaMK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/YVHZYX_simg_001f7a_749-749-0-166_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/YgD9Rw_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/YtpTRh_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Yuva9l_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Z00ab9_simg_ad6f9a_720-720-118-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Z2lqOt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Z3bJsF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ZN6Z0b_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ZO6KHB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ZTbJhN_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ZYuBVn_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/Zviz8Z_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ZyT4tC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/aBcgjV_simg_6b6b70_501-501-0-0_cropf_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/aKzigc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/aTkVQb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ab61xA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/af7096_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/afOksy_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ajTe59_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ao_disney_rapunzel_vang_12_180100_2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ap9xxF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/avSIk3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/axQKd5_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ay09ul_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ayK3v0_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bAhkjl_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bBhjtA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bKTGKO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bMSdPs_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bMZHDC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bVbQvG_simg_6b6b70_501-501-0-0_cropf_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bVkvEW_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bZlVzH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/bgFrOk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/blE5VK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/brI7L9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/btUKb7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/c3bbE3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/c5mzmO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/c7a25f_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ca0014_2k0r274dnjqmk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ca0019_2k1m7r3n8oeb4_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ca0020_2k1m7shsib3mt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/cfef53_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/d41cba_simg_480b66_565-565-88-58_cropf_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/d5b0e2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/d5uuoB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dAHII2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dNTwyH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dVMXh3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dW1t8S_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dY81eY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/db45c6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dfecb0_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/dvAmVa_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eBlPpb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eLbYyG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eLrOrR_simg_fc9a3c_671-671-0-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eOjhAg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eR8Z1j_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eb68f1_simg_b5529c_250x250_maxb.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/efdcOl_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/eqEcqi_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/f2yQhI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/fA9D5n_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/faG8pA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/g1qjvW_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/g9PvKV_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gCOJ7r_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gQWLJg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gXp4wi_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gbeoW5_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gc6r89_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gi____y_th__m_bo_531e6d0cedfa9_200x200_2isrpcmsf167l_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/gj8zU2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/h1aJWk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/h2CEXs_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hNtiH0_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hQF0q8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hRxOqO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hY27bh_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hfpozZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hgXm5Z_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hl4GfP_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hnEws7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hvaoy2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/hvmnS1_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/i24v78_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/iDPX04_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/iMxheS_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ibSl6k_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ikAsyR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ipjjwv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/isenur_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/isuysR_simg_a2dfa1_720-720-0-0_cropf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jDkYKK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jHbufZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jIIhpB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jYTqkJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jbz6sA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jgX4up_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jt2ApD_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/jwG9xZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/k4iSKw_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/k5g0Gk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/k5tOE8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/k8WNvR_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/kLiSn6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/kSoS1A_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/kucxT2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ky2LpQ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/l3LFVo_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/l8qnGh_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/lHEvDp_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/lKE5J7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/lpMaNO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/luzYmN_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/mdR2dB_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/me5hVK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/mo8iIb_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/mp6pCQ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/nVjRZW_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ng31Ko_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/nkFoe8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/noQlkU_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/o0DjI7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/o7YFLC_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/odzD5M_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ojo6Yk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ouIcy8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/oyFVB4_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/p8zNLL_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/p9MbZJ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pBABLM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pJxTwe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pSc4sf_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pVTOji_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pWJZKr_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pdpTQO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/plIXPF_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/pp5ZCc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qBAagI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qCOObN_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qFrKo7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qJLtr5_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qhLYqK_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qvLPuI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qwhJ1W_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/qxhmW7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/rCDTGG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/rGL9G3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/rNZTix_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/rVEPLX_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/s8HwHl_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sA1MlG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sH1F5n_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sI46m3_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sLtgMy_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sPTkzy_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sTwJ71_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sWWGKe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sWZ1uy_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/shJpGt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/sqY5yS_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/st8wm8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/su2sd2_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/t1GfAg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/tDnC5R_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/tlGQIv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/trjcK8_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/uDfSq9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/uWbmea_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ulRH4G_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/umGG9r_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/umS4mO_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/uvN60S_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/uxUNcY_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/v8VuuW_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vGQTyH_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vRMMCg_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vT6KaM_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vTPRbi_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vZav4r_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vgFsjr_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vjmhnP_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/vzVdNe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/w44MR6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/wGw6fe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/wHsPez_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/wNVzS6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/wUqlsA_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/wtIRbv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xWhP6S_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xXuPxE_simg_b5529c_250x250_maxb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xZjmTx_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xfiXHI_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xoFqf6_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/xxHyxe_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yD9RaG_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yGLs68_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yHqp2r_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yK53sc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yTcGH9_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yXGV3o_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yYBvT7_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/yZXhL1_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ycxTHc_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/ywsuvk_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zA7rSx_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zNPyOZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zTxXEp_simg_b5529c_250x250_maxb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zYLkC1_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zeMtzv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zfbtMt_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zstrXZ_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/picture/product/zt59Vv_simg_b5529c_250x250_maxb.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuanLySanPham3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuanLySanPham3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/connection/ConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/connection/ConnectDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/ProductDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/Product_logDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/Product_logDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/User_logDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/dao/User_logDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/AddProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/DeleteProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/DeleteProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/EditProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/product/EditProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/AddUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/AddUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/DeleteUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/DeleteUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/EditUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/webapp/servlet/user/EditUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/log4j2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/Error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/Error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/user/Add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/user/Add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/user/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/jsp/user/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/connection/ConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/connection/ConnectDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/ProductDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/Product_logDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/Product_logDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/User_logDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/dao/User_logDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/AddProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/DeleteProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/DeleteProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/EditProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/product/EditProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/AddUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/AddUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/DeleteUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/DeleteUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/EditUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuanLySanPham3/webapp/servlet/user/EditUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Product_logDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Product_logDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/User_logDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/User_logDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/servlet/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/servlet/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/servlet/product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/servlet/product/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/servlet/user/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/servlet/user/AddUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/log4j2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/Error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/Error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/user/Add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/user/Add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/user/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/user/Home.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,41 +515,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Add.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/jsp/user/Add.jsp">
+      <file leaf-file-name="Home.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/jsp/product/Home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="408">
+              <caret line="343" column="18" lean-forward="true" selection-start-line="343" selection-start-column="18" selection-end-line="343" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Error.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/jsp/Error.jsp">
+      <file leaf-file-name="Menu.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsp/Menu.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsp/type/Home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="193">
+              <caret line="35" column="43" selection-start-line="25" selection-start-column="11" selection-end-line="46" selection-end-column="15" />
+              <folding>
+                <element signature="e#1195#1443#0#HTML" />
+                <element signature="e#1495#1952#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteProductServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/product/DeleteProductServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorHandlerServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/ErrorHandlerServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAccount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/UserAccount.java">
+      <file leaf-file-name="DeleteUserServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/user/DeleteUserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product_logDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/Product_logDao.java">
+      <file leaf-file-name="DeleteAllUserServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/user/DeleteAllUserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -124,55 +582,69 @@
         <entry file="file://$PROJECT_DIR$/web/jsp/user/Home.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/UserDao.java">
+      <file leaf-file-name="Edit.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsp/product/Edit.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteAllProductServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/product/DeleteAllProductServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3196">
-              <caret line="199" column="30" selection-start-line="199" selection-start-column="30" selection-end-line="199" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j2.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/log4j2.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/user/AdminServlet.java">
+      <file leaf-file-name="DeleteTypeServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/type/DeleteTypeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ProductDao.java">
+      <file leaf-file-name="uploadFileExcel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/ImportExcel/uploadFileExcel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+              <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddUserServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/user/AddUserServlet.java">
+      <file leaf-file-name="UserServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/product/UserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+            <state relative-caret-position="782">
+              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#doPost#0;class#UserServlet#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PagingDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/PagingDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="61" column="152" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="152" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExcelToDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/webapp/servlet/ImportExcel/ExcelToDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -249,8 +721,28 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="QuanLySanPham3" type="58d84e3e:PackageViewProjectNode" />
+              <item name="QuanLySanPham3" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="QuanLySanPham3" type="58d84e3e:PackageViewProjectNode" />
+              <item name="QuanLySanPham3" type="616d4139:PackageViewModuleNode" />
+              <item name="webapp.servlet" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="QuanLySanPham3" type="58d84e3e:PackageViewProjectNode" />
+              <item name="QuanLySanPham3" type="616d4139:PackageViewModuleNode" />
+              <item name="webapp.servlet" type="1f31426a:PackageElementNode" />
+              <item name="product" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,56 +753,38 @@
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="web_war_exploded" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
@@ -322,6 +796,20 @@
               <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuanLySanPham3" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="type" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLySanPham3" type="b2602c69:ProjectViewProjectNode" />
@@ -344,6 +832,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,59 +1106,91 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65790000" />
+    <option name="totallyTimeSpent" value="66280000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32852387" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.6366723" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33296338" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991511" visible="true" weight="0.12405446" />
-      <window_info id="Web" order="2" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.24962178" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3962264" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32995737" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="SonarLint" order="7" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Run with VisualVM" order="7" weight="0.32963374" />
-      <window_info anchor="bottom" id="Debug with VisualVM" order="7" sideWeight="0.49946696" weight="0.32963374" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Tail" order="7" />
-      <window_info anchor="bottom" id="Code comment" order="7" />
-      <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.5837958" />
-      <window_info anchor="right" id="Jenkins" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32963374" />
-      <window_info anchor="bottom" id="Messages" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Mongo Explorer" order="4" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tail" order="7" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.5037594" side_tool="true" weight="0.18381241" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44062153" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32963374" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.30077693" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3318535" />
+      <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.5837958" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
+      <window_info anchor="bottom" id="Code comment" order="7" />
+      <window_info anchor="right" id="Jenkins" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49624062" visible="true" weight="0.1663113" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="7" weight="0.32963374" />
+      <window_info id="Web" order="2" sideWeight="0.5037594" side_tool="true" weight="0.18381241" />
+      <window_info anchor="bottom" id="SonarLint" order="7" />
+      <window_info id="Favorites" order="2" sideWeight="0.5037594" side_tool="true" weight="0.18381241" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="7" sideWeight="0.49946696" weight="0.32963374" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33296338" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32852387" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991511" visible="true" weight="0.12405446" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Code comment" order="7" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32963374" />
+      <window_info anchor="right" id="Jenkins" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="7" sideWeight="0.49946696" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="7" weight="0.32963374" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Tail" order="7" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info id="Favorites" order="2" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Mongo Explorer" order="4" />
+      <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.5837958" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.6366723" />
+      <window_info id="Web" order="2" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3962264" />
+      <window_info anchor="bottom" id="SonarLint" order="7" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32852387" />
       <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Tail" order="9" />
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Jenkins" order="9" />
       <window_info anchor="bottom" id="Code comment" order="10" />
       <window_info id="Image Layers" order="3" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33296338" />
@@ -677,7 +1198,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Web" order="7" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
       <window_info id="Favorites" order="6" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32963374" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -685,28 +1205,27 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="CheckStyle" order="13" weight="0.5837958" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50053304" side_tool="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Messages" order="15" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="SonarLint" order="16" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Run with VisualVM" order="17" weight="0.32963374" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="bottom" id="Java Enterprise" order="18" />
       <window_info anchor="bottom" id="Database Changes" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="20" weight="0.6381798" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991511" visible="true" weight="0.122068234" />
-      <window_info anchor="bottom" id="Messages" order="15" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="21" sideWeight="0.49946696" weight="0.32963374" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.50282484" side_tool="true" weight="0.24962178" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Jenkins" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.24962178" />
       <window_info anchor="right" id="Mongo Explorer" order="11" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32995737" />
-      <window_info anchor="bottom" id="Tail" order="9" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3962264" />
     </layout-to-restore>
   </component>
@@ -785,9 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,9 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -963,8 +1476,11 @@
     <entry file="file://$PROJECT_DIR$/src/dao/AdminDao.java" />
     <entry file="file://$PROJECT_DIR$/src/webapp/servlet/product/UserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="782">
+          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+          <folding>
+            <element signature="method#doPost#0;class#UserServlet#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,7 +1501,7 @@
     <entry file="file://$PROJECT_DIR$/src/webapp/servlet/MyExceptionServlet.java" />
     <entry file="file://$PROJECT_DIR$/src/webapp/servlet/product/DeleteProductServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="561">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
@@ -1000,14 +1516,14 @@
     <entry file="file://$PROJECT_DIR$/src/webapp/servlet/user/DeleteUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/webapp/servlet/ErrorHandlerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="204">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -1064,9 +1580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,9 +1622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1125,7 +1635,7 @@
     <entry file="file://$PROJECT_DIR$/web/jsp/user/Home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>
