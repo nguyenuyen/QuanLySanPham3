@@ -10,7 +10,10 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="log4j-api-2.11.0" />
           <element id="library" level="project" name="postgresql-8.3-603.jdbc4" />
-          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="commons-io-2.6-javadoc" />
+          <element id="library" level="project" name="commons-codec-1.10" />
+          <element id="library" level="project" name="commons-fileupload-1.2.2" />
+          <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.4" />
         </element>
       </element>
     </root>
