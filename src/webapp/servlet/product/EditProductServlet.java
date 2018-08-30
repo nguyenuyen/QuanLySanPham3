@@ -31,6 +31,7 @@ public class EditProductServlet extends HttpServlet {
         int price = Integer.parseInt(p);
         String type = request.getParameter("type");
 
+        String page = (String) request.getSession().getAttribute("pageactive");
         logger.error("name:"+name+" gia : " +price +"type : "+ type +"gia : "+price);
 
         int id = (int) request.getSession().getAttribute("product_id");
@@ -59,11 +60,12 @@ public class EditProductServlet extends HttpServlet {
 
         //RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         //dispatcher.forward(request, response);
-        response.sendRedirect("/UserServlet");
+        response.sendRedirect(request.getContextPath() +"/UserServlet?page="+page);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("pageactive", request.getParameter("page"));
         UserDao userDao = new UserDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));

@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4" >
                 <h2 style="color: green "> Quản lý sản phẩm </h2>
-                <a href="${pageContext.request.contextPath}/UserServlet">Quản lý sản phẩm </a> <br><br>
+                <a href="${pageContext.request.contextPath}/UserServlet?page=1&type=">Quản lý sản phẩm </a> <br><br>
                 <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a>
             </div>
         </div>

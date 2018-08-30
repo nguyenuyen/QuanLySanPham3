@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label>Thể loại :</label>
-                    <select class="form-control" id="sel1" name="type">
+                    <select class="form-control" id="sel1" name="type123">
                         <c:forEach items="${listType}" var="list">
                             <option value="${list.name}">${list.name}</option>
                         </c:forEach>

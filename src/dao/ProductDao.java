@@ -125,11 +125,19 @@ public class ProductDao {
         try {
             conn = new ConnectDatabase().getConnecttion();
             if (conn == null) logger.error("loi ket noi database");
-            String sql = "update product set name = ?, price = ?, type_id = (select id from type where type.name = ?) where id = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
+            int id =0;
+            String query = "select id from type where type.name = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, product.getType());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                id= rs.getInt("id");
+            }
+            String sql = "update product set name = ?, price = ?, type_id = ? where id = ?";
+            ps = conn.prepareStatement(sql);
             ps.setString(1, product.getName());
             ps.setInt(2,product.getPrice());
-            ps.setString(3, product.getType());
+            ps.setInt(3, id);
             ps.setInt(4, product.getId());
             logger.error(ps.toString());
             int result = ps.executeUpdate();

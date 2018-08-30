@@ -1,11 +1,9 @@
 package webapp.servlet.product;
 
-import dao.PagingDao;
-import dao.ProductDao;
-import dao.Product_logDao;
-import dao.UserDao;
+import dao.*;
 import model.Product;
 import model.Product_log;
+import model.Type;
 import model.UserAccount;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,6 +41,10 @@ public class UserServlet extends HttpServlet {
         ProductDao productDao = new ProductDao();
         List<Product> productList = new ArrayList<>();
         productList = productDao.findAllProduct(loginUser.getEmail());
+        TypeDao typeDao = new TypeDao();
+        List<Type> list = new ArrayList<>();
+        list = typeDao.findAllType();
+        request.setAttribute("listType",list);
         //  request.setAttribute("listProduct", productDao.findAllProduct(loginUser.getEmail()));
 
 
@@ -59,6 +61,7 @@ public class UserServlet extends HttpServlet {
 //        dispatcher.forward(request, response);
 
 
+      //  String page = request.getParameter("page");
         String s = request.getParameter("search");
         int page = 1;
         String option = request.getParameter("option");
@@ -69,15 +72,18 @@ public class UserServlet extends HttpServlet {
             recordsPerpage = Integer.parseInt(request.getParameter("option"));
         }
 
-
         if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
+        String type = request.getParameter("type");
+
+        request.getSession().setAttribute("type",type );
         request.getSession().setAttribute("search", s);
         request.getSession().setAttribute("record", recordsPerpage);
+        request.getSession().setAttribute("page", page);
 
         PagingDao pagingDao = new PagingDao();
-        List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(), s);
+        List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(), s,type);
         int noOfRecords = pagingDao.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerpage);
         request.setAttribute("listProduct", products);

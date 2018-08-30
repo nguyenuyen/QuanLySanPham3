@@ -34,31 +34,43 @@
             // });
 
             $("#searchData").click(function () {
+                var type = $("#type").val();
                 var page = 1;
                 var searchItem = $("#search").val();
                 var option = $("#chose").val();
-                loadPage(searchItem, page, option);
+                loadWithType(searchItem, page, option,type);
             })
             $("#chose").change(function () {
+                var type = $("#type").val();
                 var page = 1;
                 var searchItem = $("#search").val();
                 var option = $("#chose").val();
-                loadPage(searchItem, page, option);
+                loadWithType(searchItem, page, option,type);
 
             })
 
             $(".item").on('click', function () {
                 // alert();
+                var type = $("#type").val();
                 var page = $(this).val();
                 var searchItem = $("#search").val();
                 var option = $("#chose").val();
-                loadPage(searchItem, page, option);
+                loadWithType(searchItem, page, option,type);
             })
-
-
+            
+            $("#type").change(function () {
+                var type = $("#type").val();
+                var page = 1;
+                var searchItem = $("#search").val();
+                var option = $("#chose").val();
+                loadWithType(searchItem, page, option,type);
+            })
+            function loadWithType(search, page, option,type) {
+                location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option +"&type="+type;
+            }
 
             function loadPage(search, page, option) {
-                location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option;
+                location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option ;
 
             }
 
@@ -164,7 +176,7 @@
 
         .scroll {
             display: block;
-            height: 500px;
+            height: 520px;
             overflow-y: scroll;
         }
         .zoom:hover {
@@ -261,6 +273,22 @@
 
                     </select>
 
+
+                    <label>search with type:</label>
+                    <select  id="type" name="type">
+                        <option  ></option>
+                        <c:forEach items="${listType}" var="list">
+                            <c:choose>
+                                <c:when test="${list.name eq type}">
+                                    <option value="${list.name}" selected>${list.name}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${list.name}">${list.name}</option>
+                                </c:otherwise>
+                            </c:choose>
+                            <%--<option value="${list.name}">${list.name}</option>--%>
+                        </c:forEach>
+                    </select>
                 </div>
 
                 <% int i = 1; %>
@@ -290,9 +318,9 @@
                             <td><fmt:formatNumber type="number" pattern="###,###" value="${product.price}"/> VNĐ</td>
                             <td> ${product.create_at}</td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                    href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}">
+                                    href="${pageContext.request.contextPath}/EditProductServlet?page=${page}&id=${product.id}&search=${search}&option=${record}&type=${type}">
                                 edit</a>&nbsp; &nbsp;
-                                <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
+                                <a href="${pageContext.request.contextPath}/DeleteProductServlet?page=${page}&id=${product.id}&search=${search}&option=${record}&type=${type}"
                                    onclick="return confirmDelete()">delete</a></td>
                         </tr>
                     </c:forEach>

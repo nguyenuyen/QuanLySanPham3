@@ -19,9 +19,13 @@ public class DeleteAllProductServlet extends HttpServlet {
         ProductDao productDao = new ProductDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         String[] value =  request.getParameterValues("check");
+        String search = request.getParameter("search");
+        String option = request.getParameter("option");
+        String page = request.getParameter("page");
+        String type = request.getParameter("type");
         int s = productDao.deleteAllProduct(value);
         if(s ==1 )
-        response.sendRedirect(request.getContextPath() +"/UserServlet");
+            response.sendRedirect(request.getContextPath() +"/UserServlet?search="+search+"&option="+option+"&page="+page+"&type"+type);
 
     }
 
