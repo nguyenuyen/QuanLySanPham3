@@ -56,7 +56,6 @@
             })
 
 
-
             function loadPage(search, page, option) {
                 location.href = "/UserServlet?page=" + page + "&search=" + search + "&option=" + option;
 
@@ -154,9 +153,9 @@
             var page = document.getElementsByClassName("active")[0].value;
             var option = document.getElementById("chose").value;
             var search = document.getElementById("search").value;
-            alert("page="+page+"&option="+option+"&search="+search);
+            //  alert("page="+page+"&option="+option+"&search="+search);
             if (v == "1") {
-                frm.action = "/DeleteAllProductServlet?page="+page+"&option="+option+"&search="+search;
+                frm.action = "/DeleteAllProductServlet?page=" + page + "&option=" + option + "&search=" + search;
             } else if (v == "2") {
                 frm.action = "/ExportExcelServlet";
             }
@@ -168,11 +167,15 @@
     </script>
     <style>
 
+
+
+
         .scroll {
             display: block;
-            height: 500px;
+            /*//height: 500px;*/
             overflow-y: scroll;
         }
+
         .zoom:hover {
             -ms-transform: scale(2); /* IE 9 */
             -webkit-transform: scale(2); /* Safari 3-8 */
@@ -227,7 +230,7 @@
                 <h2>Danh sách các sản phẩm:</h2> <br>
                 <div style="float: right">
                     <input id="search" name="search" value="${search}">
-                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"/>  <br>
+                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"/> <br>
                 </div>
                 <div style="float: left">
                     <label>show item : </label>
@@ -270,7 +273,8 @@
                 </div>
 
                 <% int i = 1; %>
-                <table id="example" class="table table-striped table-bordered scroll " cellpadding="0" cellspacing="0" border="0" >
+                <table id="example" class="table table-striped table-bordered scroll " cellpadding="0" cellspacing="0"
+                       border="0">
                     <thead>
                     <tr>
                         <th><label><input type="checkbox" id="checkedAll" name="checkedAll" value=""> </label></th>
@@ -359,7 +363,7 @@
         <div class="row">
             <div class="col-lg-12">
                 Select a file excel:
-                <input type="file" id="myFile" name="myFile"
+                <input type="file" id="myFile" name="myFile" required
                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"> <br><br>
                 <input type="submit" id="importExcel" class="btn btn-primary" value="Import Excel File"> <br><br>
                 <a href="${pageContext.request.contextPath}/TypeServlet">Quản lý thể loại </a> <br><br>
