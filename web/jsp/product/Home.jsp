@@ -148,9 +148,15 @@
         }
 
         function submitx(v) {
+
+
             var frm = document.form1;
+            var page = document.getElementsByClassName("active")[0].value;
+            var option = document.getElementById("chose").value;
+            var search = document.getElementById("search").value;
+            alert("page="+page+"&option="+option+"&search="+search);
             if (v == "1") {
-                frm.action = "/DeleteAllProductServlet";
+                frm.action = "/DeleteAllProductServlet?page="+page+"&option="+option+"&search="+search;
             } else if (v == "2") {
                 frm.action = "/ExportExcelServlet";
             }
@@ -221,7 +227,7 @@
                 <h2>Danh sách các sản phẩm:</h2> <br>
                 <div style="float: right">
                     <input id="search" name="search" value="${search}">
-                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"/> <br>
+                    <input type="button" id="searchData" name="searchData" class="btn btn-primary" value="Search"/>  <br>
                 </div>
                 <div style="float: left">
                     <label>show item : </label>
@@ -290,9 +296,9 @@
                             <td><fmt:formatNumber type="number" pattern="###,###" value="${product.price}"/> VNĐ</td>
                             <td> ${product.create_at}</td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                    href="${pageContext.request.contextPath}/EditProductServlet?id=${product.id}">
+                                    href="${pageContext.request.contextPath}/EditProductServlet?page=${page}&id=${product.id}&search=${search}&option=${record}">
                                 edit</a>&nbsp; &nbsp;
-                                <a href="${pageContext.request.contextPath}/DeleteProductServlet?id=${product.id}"
+                                <a href="${pageContext.request.contextPath}/DeleteProductServlet?page=${page}&id=${product.id}&search=${search}&option=${record}"
                                    onclick="return confirmDelete()">delete</a></td>
                         </tr>
                     </c:forEach>
@@ -308,7 +314,7 @@
                         <c:forEach begin="1" end="${noOfPages}" var="i">
                             <c:choose>
                                 <c:when test="${currentPage eq i}">
-                                    <li class="item active" value="${i}">${i}&nbsp;</li>
+                                    <li class="active" value="${i}">${i}&nbsp;</li>
                                 </c:when>
                                 <c:otherwise>
                                     <li class="item" value="${i}">${i}&nbsp;</li>

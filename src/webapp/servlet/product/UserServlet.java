@@ -75,6 +75,7 @@ public class UserServlet extends HttpServlet {
         }
         request.getSession().setAttribute("search", s);
         request.getSession().setAttribute("record", recordsPerpage);
+        request.getSession().setAttribute("page", page);
 
         PagingDao pagingDao = new PagingDao();
         List<Product> products = pagingDao.viewAllProduct((page - 1) * recordsPerpage, recordsPerpage, loginUser.getEmail(), s);

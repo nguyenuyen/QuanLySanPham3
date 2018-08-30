@@ -26,6 +26,7 @@ public class EditProductServlet extends HttpServlet {
     public static final Logger logger = LogManager.getRootLogger();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         String name = request.getParameter("name");
         String p = request.getParameter("price");
         int price = Integer.parseInt(p);
@@ -57,13 +58,23 @@ public class EditProductServlet extends HttpServlet {
 
         Product_logDao.AddProduct_log(product_log);
 
+        String page = (String) request.getSession().getAttribute("pageactive");
+        String search= (String) request.getSession().getAttribute("search");
+        String option = (String) request.getSession().getAttribute("option");
+
+
         //RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product/Home.jsp");
         //dispatcher.forward(request, response);
-        response.sendRedirect("/UserServlet");
+        response.sendRedirect("/UserServlet?page="+page+"&search="+search+"&option="+option +"&id="+id);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("pageactive", request.getParameter("page"));
+        String search = request.getParameter("search");
+        String option = request.getParameter("option");
+        request.getSession().setAttribute("search", search);
+        request.getSession().setAttribute("option", option);
         UserDao userDao = new UserDao();
         UserAccount loginUser = AppUtils.getLoginUser(request.getSession());
         request.setAttribute("loginUser",userDao.findUser(loginUser.getEmail()));

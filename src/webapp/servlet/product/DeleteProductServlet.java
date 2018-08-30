@@ -29,6 +29,10 @@ public class DeleteProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String search = request.getParameter("search");
+        String option = request.getParameter("option");
+        String page = request.getParameter("page");
+        //String type = request.getParameter("type");
         String id = request.getParameter("id");
         int product_id = Integer.parseInt(id);
         request.getSession().setAttribute("product_id", product_id);
@@ -57,6 +61,6 @@ public class DeleteProductServlet extends HttpServlet {
 
         //  RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/product/Home.jsp");
         //  dispatcher.forward(request,response);
-        response.sendRedirect("/UserServlet");
+        response.sendRedirect(request.getContextPath() +"/UserServlet?search="+search+"&option="+option+"&page="+page);
     }
 }
