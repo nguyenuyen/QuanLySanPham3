@@ -33,7 +33,7 @@
 
         function validatePhone(txtPhone) {
             var a = document.getElementById(txtPhone).value;
-            var filter =/^[0-9-+]+$/;
+            var filter =/(09|01[2|6|8|9])+([0-9]{8})\b/;
             if (filter.test(a)) {
                 return true;
             }
@@ -41,15 +41,39 @@
                 return false;
             }
         }
+        function checkInput() {
+            var flag = true;
+
+            if (!validatePhone('phone')) {
+                alert("So dien thoai khong hop le");
+                flag = false;
+            }
+
+            if (flag == false) {
+                return false;
+            }
+
+            else {
+                return true;
+            }
+        }
     </script>
     <title>Thêm User</title>
 </head>
 <body>
-<form method="post" action="/EditUserServlet">
+<form method="post" action="/EditUserServlet" onsubmit="return checkInput()">
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right;padding: 30px;">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.name} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí user </h1>
+        </div>
+    </div>
     <div class="container">
-         
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h1>Sửa User</h1>
                 <div class="form-group">
                     <label>Email:</label>
@@ -71,7 +95,6 @@
 
                 <div>
                     <button type="submit" class="btn btn-default">Sửa</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
                 </div>
             </div>
         </div>

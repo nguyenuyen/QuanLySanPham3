@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +9,6 @@
     <script>
 
         $(document).ready(function() {
-
             var text = document.getElementById('price');
             text.onkeypress = text.onpaste = checkPhone;
             function checkPhone(e) {
@@ -26,9 +26,17 @@
     <title>Sửa Sản Phẩm</title>
 </head>
 <body>
-<form method="post" action="/EditProductServlet">
-    <div class="container">
-         
+<form method="post" action="/EditProductServlet" >
+    <div style="background: #E0E0E0; height: 65px; padding: 5px;">
+        <div style="float: right;padding: 30px;">
+            <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a> &nbsp;
+            <span style="color:blue">[ ${loginUser.name} ]</span>
+        </div>
+        <div style="float: left">
+            <h1>Quản lí sản phẩm </h1>
+        </div>
+    </div>
+    <div class="container"> 
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <h1>Sửa Sản Phẩm</h1>
@@ -37,16 +45,19 @@
                     <input type="text" class="form-control" name="name" required value="${product.name}">
                 </div>
                 <div class="form-group">
-                    <label >Thể Loại</label>
-                    <input type="text" class="form-control" name="type" value="${product.type}" required>
+                    <label>Thể loại :</label>
+                    <select class="form-control" id="sel1" name="type">
+                        <c:forEach items="${listType}" var="list">
+                            <option value="${list.name}">${list.name}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label >Giá</label>
                     <input type="text" class="form-control" name="price" value="${product.price}" id="price" required>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-default">Sửa</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-default" >Edit</button>
                 </div>
             </div>
         </div>

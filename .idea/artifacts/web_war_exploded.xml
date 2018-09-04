@@ -9,8 +9,9 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="log4j-api-2.11.0" />
-          <element id="library" level="project" name="postgresql-8.3-603.jdbc4" />
-          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="jsoup-1.6.01" />
+          <element id="library" level="project" name="commons-codec-1.10" />
         </element>
       </element>
     </root>
